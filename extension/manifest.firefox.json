@@ -1,0 +1,53 @@
+{
+  "manifest_version": 3,
+  "permissions": [
+    "alarms",
+    "bookmarks",
+    "clipboardWrite",
+    "cookies",
+    "declarativeNetRequestWithHostAccess",
+    "downloads",
+    "history",
+    "notifications",
+    "search",
+    "scripting",
+    "storage",
+    "tabs",
+    "topSites",
+    "unlimitedStorage",
+    "webNavigation",
+    "webRequest",
+    "webRequestBlocking"
+  ],
+  "optional_permissions": ["userScripts"],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "action": {
+    "default_title": "打开万象星核智能体",
+    "default_icon": {
+      "16": "project-assets/userscript-deck/visual/action-icons/novabay-icon-16.png",
+      "32": "project-assets/userscript-deck/visual/action-icons/novabay-icon-32.png",
+      "48": "project-assets/userscript-deck/visual/action-icons/novabay-icon-48.png",
+      "128": "project-assets/userscript-deck/visual/action-icons/novabay-icon-128.png"
+    }
+  },
+  "sidebar_action": {
+    "default_title": "万象星核智能体",
+    "default_panel": "assistant.html",
+    "default_icon": {
+      "16": "project-assets/userscript-deck/visual/action-icons/novabay-icon-16.png",
+      "32": "project-assets/userscript-deck/visual/action-icons/novabay-icon-32.png",
+      "48": "project-assets/userscript-deck/visual/action-icons/novabay-icon-48.png",
+      "128": "project-assets/userscript-deck/visual/action-icons/novabay-icon-128.png"
+    },
+    "open_at_install": false
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "novabay@blog.medicalstu.cn",
+      "strict_min_version": "153.0"
+    }
+  },
+  "incognito": "spanning"
+}

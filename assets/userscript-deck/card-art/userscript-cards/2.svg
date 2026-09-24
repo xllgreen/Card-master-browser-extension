@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="834" height="1112" viewBox="0 0 834 1112">
+  <defs>
+    <pattern id="starPattern" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="0.8" fill="#8a9bae" opacity="0.25"/>
+      <circle cx="50" cy="30" r="0.5" fill="#8a9bae" opacity="0.15"/>
+      <circle cx="30" cy="60" r="0.7" fill="#8a9bae" opacity="0.2"/>
+      <circle cx="70" cy="70" r="0.6" fill="#8a9bae" opacity="0.15"/>
+    </pattern>
+  </defs>
+
+  <rect width="834" height="1112" fill="#f5f0e6"/>
+  <rect width="834" height="1112" fill="url(#starPattern)"/>
+  
+  <rect x="20" y="20" width="794" height="1072" rx="15" fill="none" stroke="#1a3a5c" stroke-width="3"/>
+  <rect x="30" y="30" width="774" height="1052" rx="10" fill="none" stroke="#8a9bae" stroke-width="1"/>
+  
+  <path d="M 45 45 L 85 45 M 45 45 L 45 85" stroke="#8a9bae" stroke-width="1.5" fill="none"/>
+  <circle cx="45" cy="45" r="3" fill="#8a9bae"/>
+  <path d="M 789 45 L 749 45 M 789 45 L 789 85" stroke="#8a9bae" stroke-width="1.5" fill="none"/>
+  <circle cx="789" cy="45" r="3" fill="#8a9bae"/>
+  <path d="M 45 1067 L 85 1067 M 45 1067 L 45 1027" stroke="#8a9bae" stroke-width="1.5" fill="none"/>
+  <circle cx="45" cy="1067" r="3" fill="#8a9bae"/>
+  <path d="M 789 1067 L 749 1067 M 789 1067 L 789 1027" stroke="#8a9bae" stroke-width="1.5" fill="none"/>
+  <circle cx="789" cy="1067" r="3" fill="#8a9bae"/>
+  
+  <text x="417" y="130" font-family="Noto Serif SC, Songti SC, SimSun, serif" font-size="52" font-weight="700" fill="#1a3a5c" text-anchor="middle" letter-spacing="10">堡垒星核</text>
+  <text x="417" y="172" font-family="Noto Serif SC, Songti SC, SimSun, serif" font-size="16" fill="#8a9bae" text-anchor="middle" letter-spacing="6">NOVABAY · 寒霜阵营</text>
+  
+  <line x1="180" y1="205" x2="360" y2="205" stroke="#8a9bae" stroke-width="1"/>
+  <line x1="474" y1="205" x2="654" y2="205" stroke="#8a9bae" stroke-width="1"/>
+  <rect x="407" y="195" width="20" height="20" fill="none" stroke="#8a9bae" stroke-width="1" transform="rotate(45 417 205)"/>
+  
+  <g transform="translate(0,20)">
+    <circle cx="417" cy="560" r="150" fill="none" stroke="#1a3a5c" stroke-width="1.5"/>
+    <circle cx="417" cy="560" r="130" fill="none" stroke="#8a9bae" stroke-width="1"/>
+    
+    <polygon points="417,430 535,495 535,625 417,690 299,625 299,495" fill="none" stroke="#1a3a5c" stroke-width="2.5"/>
+    <polygon points="417,460 505,510 505,610 417,660 329,610 329,510" fill="none" stroke="#8a9bae" stroke-width="1"/>
+    <polygon points="417,490 475,525 475,595 417,630 359,595 359,525" fill="none" stroke="#1a3a5c" stroke-width="1"/>
+    
+    <line x1="417" y1="430" x2="417" y2="690" stroke="#1a3a5c" stroke-width="0.8"/>
+    <line x1="299" y1="560" x2="535" y2="560" stroke="#1a3a5c" stroke-width="0.8"/>
+    
+    <circle cx="417" cy="560" r="25" fill="#1a3a5c"/>
+    <circle cx="417" cy="560" r="10" fill="#f5f0e6"/>
+    <circle cx="417" cy="560" r="4" fill="#1a3a5c"/>
+  </g>
+  
+  <line x1="300" y1="1020" x2="534" y2="1020" stroke="#8a9bae" stroke-width="1"/>
+  <text x="417" y="1060" font-family="Noto Serif SC, Songti SC, SimSun, serif" font-size="16" fill="#1a3a5c" text-anchor="middle" letter-spacing="4">NOVABAY-002</text>
+</svg>

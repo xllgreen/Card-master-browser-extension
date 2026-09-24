@@ -1,0 +1,250 @@
+<svg width="834" height="1112" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 834 1112">
+  <defs>
+    <!-- 背景渐变 -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="75%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#141824" />
+      <stop offset="60%" stop-color="#0B0F19" />
+      <stop offset="100%" stop-color="#05070A" />
+    </radialGradient>
+    
+    <!-- 星核渐变 -->
+    <radialGradient id="coreGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="20%" stop-color="#FB7299" />
+      <stop offset="70%" stop-color="#23ADE5" />
+      <stop offset="100%" stop-color="#0B0F19" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- 内层星核渐变 -->
+    <radialGradient id="innerCore" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="50%" stop-color="#FB7299" />
+      <stop offset="100%" stop-color="#23ADE5" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- 发光滤镜 -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- 强发光滤镜 -->
+    <filter id="strongGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="25" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- 弹幕文字描边滤镜 -->
+    <filter id="textStroke">
+      <feMorphology operator="dilate" radius="2" in="SourceAlpha" result="dilated" />
+      <feFlood flood-color="#000000" flood-opacity="0.8" result="black" />
+      <feComposite in="black" in2="dilated" operator="in" result="stroke" />
+      <feMerge>
+        <feMergeNode in="stroke" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- 网格图案 -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#23ADE5" stroke-width="0.5" opacity="0.15" />
+    </pattern>
+
+    <!-- 点状图案 -->
+    <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#FB7299" opacity="0.3" />
+    </pattern>
+  </defs>
+
+  <!-- 背景层 -->
+  <rect width="834" height="1112" fill="url(#bgGrad)" />
+  <rect width="834" height="1112" fill="url(#grid)" />
+  <rect width="834" height="1112" fill="url(#dots)" />
+
+  <!-- 装饰性科技线条 -->
+  <path d="M 0 150 L 100 150 L 120 170 L 120 200" fill="none" stroke="#23ADE5" stroke-width="2" opacity="0.6" />
+  <path d="M 834 150 L 734 150 L 714 170 L 714 200" fill="none" stroke="#FB7299" stroke-width="2" opacity="0.6" />
+  <path d="M 0 960 L 100 960 L 120 940 L 120 910" fill="none" stroke="#FB7299" stroke-width="2" opacity="0.6" />
+  <path d="M 834 960 L 734 960 L 714 940 L 714 910" fill="none" stroke="#23ADE5" stroke-width="2" opacity="0.6" />
+
+  <!-- 卡牌外边框 -->
+  <rect x="25" y="25" width="784" height="1062" rx="30" fill="none" stroke="#FB7299" stroke-width="4" opacity="0.8" />
+  <rect x="35" y="35" width="764" height="1042" rx="20" fill="none" stroke="#23ADE5" stroke-width="2" stroke-dasharray="15 10" opacity="0.8" />
+  
+  <!-- 顶部标题栏 -->
+  <rect x="45" y="45" width="744" height="140" rx="15" fill="#141824" stroke="#FB7299" stroke-width="1.5" opacity="0.9" />
+  <path d="M 45 80 L 60 80 L 75 95 L 75 185 L 45 185 Z" fill="#FB7299" opacity="0.3" />
+  <path d="M 789 80 L 774 80 L 759 95 L 759 185 L 789 185 Z" fill="#23ADE5" opacity="0.3" />
+
+  <!-- 标题文字 -->
+  <text x="417" y="95" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="42" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="4">
+    万象星核
+  </text>
+  <text x="417" y="135" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#FB7299" text-anchor="middle" letter-spacing="8">
+    NovaBay
+  </text>
+  <text x="417" y="165" font-family="'Microsoft YaHei', Arial, sans-serif" font-size="14" font-weight="bold" fill="#23ADE5" text-anchor="middle" letter-spacing="2">
+    BILIBILI DANMAKU MERGE
+  </text>
+
+  <!-- 中心星核区域（整体下移，平衡底部空间） -->
+  <g transform="translate(417, 580)">
+    <!-- 星核发光背景 -->
+    <circle cx="0" cy="0" r="180" fill="url(#coreGrad)" filter="url(#strongGlow)" opacity="0.6" />
+    <circle cx="0" cy="0" r="120" fill="url(#innerCore)" filter="url(#glow)" opacity="0.8" />
+    
+    <!-- 原子轨道 -->
+    <ellipse cx="0" cy="0" rx="240" ry="80" fill="none" stroke="#23ADE5" stroke-width="3" transform="rotate(-30)" opacity="0.7" />
+    <ellipse cx="0" cy="0" rx="240" ry="80" fill="none" stroke="#FB7299" stroke-width="3" transform="rotate(30)" opacity="0.7" />
+    <ellipse cx="0" cy="0" rx="240" ry="80" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="10 10" transform="rotate(90)" opacity="0.5" />
+    <circle cx="0" cy="0" r="260" fill="none" stroke="#FB7299" stroke-width="1" stroke-dasharray="5 15" opacity="0.4" />
+
+    <!-- 核心几何体 -->
+    <polygon points="0,-60 52,-30 52,30 0,60 -52,30 -52,-30" fill="none" stroke="#FFFFFF" stroke-width="4" filter="url(#glow)" />
+    <polygon points="0,-40 34,-20 34,20 0,40 -34,20 -34,-20" fill="#FFFFFF" opacity="0.8" />
+    
+    <!-- 内部光点 -->
+    <circle cx="0" cy="0" r="15" fill="#FFFFFF" filter="url(#glow)" />
+    <circle cx="0" cy="0" r="30" fill="none" stroke="#FB7299" stroke-width="2" stroke-dasharray="4 4" />
+  </g>
+
+  <!-- 弹幕文字层 -->
+  <g font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-weight="bold" text-anchor="middle">
+    
+    <!-- 外围弹幕 -->
+    <g opacity="0.4" font-size="14" fill="#23ADE5">
+      <text x="100" y="250" transform="rotate(-15 100 250)">施工完毕</text>
+      <text x="680" y="280" transform="rotate(10 680 280)">弹幕护体</text>
+      <text x="150" y="850" transform="rotate(20 150 850)">火钳刘明</text>
+      <text x="700" y="820" transform="rotate(-10 700 820)">下次一定</text>
+      <text x="80" y="500" transform="rotate(90 80 500)">NovaBay 赛高</text>
+      <text x="750" y="600" transform="rotate(-90 750 600)">星核觉醒</text>
+    </g>
+
+    <g opacity="0.6" font-size="16" fill="#FB7299">
+      <text x="200" y="300" transform="rotate(-25 200 300)">梦开始的地方</text>
+      <text x="600" y="350" transform="rotate(15 600 350)">前方高能</text>
+      <text x="250" y="800" transform="rotate(15 250 800)">一键三连</text>
+      <text x="580" y="780" transform="rotate(-20 580 780)">B站牛逼</text>
+      <text x="120" y="650" transform="rotate(45 120 650)">连接星核</text>
+      <text x="720" y="480" transform="rotate(-45 720 480)">这就是万象之力</text>
+    </g>
+
+    <!-- 中层弹幕 -->
+    <g opacity="0.8" font-size="18" fill="#FFFFFF" filter="url(#textStroke)">
+      <text x="300" y="240" transform="rotate(-10 300 240)">233333</text>
+      <text x="520" y="260" transform="rotate(20 520 260)">AWSL</text>
+      <text x="180" y="400" transform="rotate(-35 180 400)">妙啊</text>
+      <text x="650" y="420" transform="rotate(30 650 420)">泪目</text>
+      <text x="280" y="880" transform="rotate(10 280 880)">爷青回</text>
+      <text x="550" y="860" transform="rotate(-15 550 860)">666666</text>
+      <text x="100" y="350" transform="rotate(60 100 350)">星核合并</text>
+      <text x="740" y="700" transform="rotate(-60 740 700)">弹幕合并成功</text>
+    </g>
+
+    <!-- 核心密集弹幕 -->
+    <g opacity="1" font-size="20" fill="#FFFFFF" filter="url(#textStroke)">
+      <text x="250" y="510" transform="rotate(-5 250 510)">万象星核</text>
+      <text x="580" y="520" transform="rotate(5 580 520)">NovaBay</text>
+      <text x="300" y="630" transform="rotate(-15 300 630)">B站弹幕合并</text>
+      <text x="530" y="660" transform="rotate(15 530 660)">前方核能</text>
+      <text x="380" y="480" transform="rotate(-20 380 480)">梦开始的地方</text>
+      <text x="460" y="710" transform="rotate(20 460 710)">一键三连</text>
+      <text x="220" y="590" transform="rotate(-40 220 590)">AWSL</text>
+      <text x="620" y="580" transform="rotate(40 620 580)">妙啊</text>
+    </g>
+
+    <!-- 核心内部高亮弹幕 -->
+    <g opacity="1" font-size="24" fill="#FB7299" filter="url(#glow)" stroke="#000000" stroke-width="3">
+      <text x="417" y="550" transform="rotate(-10 417 550)">万象</text>
+      <text x="417" y="610" transform="rotate(10 417 610)">星核</text>
+    </g>
+
+    <!-- 动态线条 -->
+    <path d="M 80 200 Q 200 300 300 480" fill="none" stroke="#FB7299" stroke-width="2" stroke-dasharray="5 10" opacity="0.5" />
+    <path d="M 750 300 Q 600 400 500 530" fill="none" stroke="#23ADE5" stroke-width="2" stroke-dasharray="5 10" opacity="0.5" />
+    <path d="M 100 800 Q 250 700 350 630" fill="none" stroke="#FB7299" stroke-width="2" stroke-dasharray="5 10" opacity="0.5" />
+    <path d="M 730 750 Q 600 650 500 630" fill="none" stroke="#23ADE5" stroke-width="2" stroke-dasharray="5 10" opacity="0.5" />
+  </g>
+
+  <!-- 底部信息区域（上移，填充底部空间） -->
+  <g transform="translate(0, 860)">
+    <!-- 分隔线 -->
+    <line x1="70" y1="0" x2="764" y2="0" stroke="#23ADE5" stroke-width="2" opacity="0.5" />
+    <line x1="70" y1="4" x2="764" y2="4" stroke="#FB7299" stroke-width="1" opacity="0.3" />
+
+    <!-- 底部装饰性弹幕流 -->
+    <g opacity="0.25" font-family="'Microsoft YaHei', Arial, sans-serif" font-size="12" fill="#23ADE5">
+      <text x="80" y="30">前方高能预警</text>
+      <text x="200" y="30">弹幕合并引擎启动</text>
+      <text x="380" y="30">连接万千思绪</text>
+      <text x="540" y="30">凝聚万象星核</text>
+      <text x="700" y="30">NovaBay 赛高</text>
+    </g>
+
+    <!-- B站三连图标（放大版） -->
+    <g transform="translate(317, 60)">
+      <!-- 点赞 -->
+      <g transform="translate(0, 0)">
+        <circle cx="25" cy="25" r="24" fill="#FB7299" opacity="0.15" stroke="#FB7299" stroke-width="2.5" />
+        <path d="M 17 30 L 17 17 L 25 17 L 25 30 Z" fill="#FB7299" />
+        <path d="M 25 17 L 33 17 L 33 30" fill="none" stroke="#FB7299" stroke-width="2.5" />
+        <path d="M 17 17 L 20 10 L 25 17" fill="none" stroke="#FB7299" stroke-width="2.5" />
+        <text x="25" y="52" font-family="'Microsoft YaHei', Arial, sans-serif" font-size="11" fill="#FB7299" text-anchor="middle" opacity="0.8">点赞</text>
+      </g>
+      <!-- 投币 -->
+      <g transform="translate(65, 0)">
+        <circle cx="25" cy="25" r="24" fill="#23ADE5" opacity="0.15" stroke="#23ADE5" stroke-width="2.5" />
+        <circle cx="25" cy="25" r="12" fill="none" stroke="#23ADE5" stroke-width="2.5" />
+        <path d="M 19 25 L 31 25 M 25 19 L 25 31" stroke="#23ADE5" stroke-width="2.5" />
+        <text x="25" y="52" font-family="'Microsoft YaHei', Arial, sans-serif" font-size="11" fill="#23ADE5" text-anchor="middle" opacity="0.8">投币</text>
+      </g>
+      <!-- 收藏 -->
+      <g transform="translate(130, 0)">
+        <circle cx="25" cy="25" r="24" fill="#FB7299" opacity="0.15" stroke="#FB7299" stroke-width="2.5" />
+        <polygon points="25,10 29,18 38,18 31,24 34,33 25,27 16,33 19,24 12,18 21,18" fill="#FB7299" />
+        <text x="25" y="52" font-family="'Microsoft YaHei', Arial, sans-serif" font-size="11" fill="#FB7299" text-anchor="middle" opacity="0.8">收藏</text>
+      </g>
+    </g>
+
+    <!-- 底部状态标签 -->
+    <g transform="translate(70, 150)">
+      <rect x="0" y="0" width="130" height="28" rx="14" fill="#FB7299" opacity="0.15" stroke="#FB7299" stroke-width="1.5" />
+      <circle cx="16" cy="14" r="4" fill="#FB7299" />
+      <text x="28" y="19" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#FB7299">ONLINE</text>
+
+      <rect x="145" y="0" width="150" height="28" rx="14" fill="#23ADE5" opacity="0.15" stroke="#23ADE5" stroke-width="1.5" />
+      <circle cx="161" cy="14" r="4" fill="#23ADE5" />
+      <text x="173" y="19" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#23ADE5">MERGING...</text>
+
+      <rect x="310" y="0" width="160" height="28" rx="14" fill="#FFFFFF" opacity="0.08" stroke="#FFFFFF" stroke-width="1" />
+      <text x="390" y="19" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#FFFFFF" opacity="0.7" text-anchor="middle">DANMAKU CORE</text>
+    </g>
+  </g>
+
+  <!-- 底部角落装饰 -->
+  <g transform="translate(50, 1050)" opacity="0.6">
+    <rect x="0" y="0" width="40" height="4" fill="#FB7299" />
+    <rect x="0" y="8" width="25" height="4" fill="#23ADE5" />
+    <rect x="0" y="16" width="15" height="4" fill="#FFFFFF" opacity="0.5" />
+  </g>
+  <g transform="translate(744, 1050)" opacity="0.6">
+    <rect x="0" y="0" width="40" height="4" fill="#23ADE5" />
+    <rect x="15" y="8" width="25" height="4" fill="#FB7299" />
+    <rect x="25" y="16" width="15" height="4" fill="#FFFFFF" opacity="0.5" />
+  </g>
+
+  <!-- B站标志性小电视图标（抽象化） -->
+  <g transform="translate(417, 120)" opacity="0.2">
+    <rect x="-20" y="-12" width="40" height="28" rx="6" fill="none" stroke="#FB7299" stroke-width="2" />
+    <path d="M -10 -12 L -15 -20 M 10 -12 L 15 -20" fill="none" stroke="#FB7299" stroke-width="2" />
+    <circle cx="-10" cy="2" r="3" fill="#23ADE5" />
+    <circle cx="10" cy="2" r="3" fill="#23ADE5" />
+    <path d="M -5 8 L 5 8" fill="none" stroke="#FB7299" stroke-width="2" />
+  </g>
+
+  <!-- 卡牌编号 -->
+  <text x="417" y="1090" font-family="Arial, sans-serif" font-size="12" fill="#4A5568" text-anchor="middle" letter-spacing="2">
+    NOVA-0342 / 834 × 1112
+  </text>
+</svg>

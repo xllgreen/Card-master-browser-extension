@@ -1,0 +1,108 @@
+:is(:root, :host, .app-ui-theme) {
+  --app-ui-cursor-default: default;
+  --app-ui-cursor-pointer: pointer;
+  --app-ui-cursor-text: text;
+  --app-ui-cursor-disabled: not-allowed;
+  --app-ui-cursor-wait: wait;
+  --app-ui-cursor-grab: grab;
+  --app-ui-cursor-grabbing: grabbing;
+  cursor: var(--app-ui-cursor-default);
+}
+
+.app-ui-theme {
+  --app-ui-font-body:
+    "HarmonyOS Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --app-ui-font-display:
+    "HarmonyOS Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --app-ui-font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    monospace;
+  --app-ui-ink: #f5f7fa;
+  --app-ui-muted: #ccd3dd;
+  --app-ui-subtle: #a8b2c0;
+  --app-ui-disabled: #8e99a8;
+  --app-ui-disabled-opacity: 0.68;
+  --app-ui-accent: #4a9eff;
+  --app-ui-accent-hover: #7ab8ff;
+  --app-ui-on-accent: #04101f;
+  --app-ui-info: #86c8d8;
+  --app-ui-success: #6ee7a8;
+  --app-ui-warning: #ffd48a;
+  --app-ui-error: #ff7a70;
+  --app-ui-canvas: #080b10;
+  --app-ui-surface: #10141b;
+  --app-ui-surface-strong: #0a0d12;
+  --app-ui-surface-muted: #191f28;
+  --app-ui-control: #0b0e13;
+  --app-ui-selected: #1f2a3a;
+  --app-ui-hover: #1a2230;
+  --app-ui-list: #0d1117;
+  --app-ui-card: #0a0d12;
+  --app-ui-rule: rgb(255 255 255 / 0.1);
+  --app-ui-border: rgb(255 255 255 / 0.14);
+  --app-ui-border-strong: rgb(255 255 255 / 0.26);
+  --app-ui-accent-soft: rgb(74 158 255 / 0.16);
+  --app-ui-user-accent: #7ab8ff;
+  --app-ui-user-soft: rgb(74 158 255 / 0.14);
+  --app-ui-agent-accent: #b8c4d4;
+  --app-ui-shadow-subtle: rgb(0 0 0 / 0.28);
+  --app-ui-shadow-menu: rgb(0 0 0 / 0.42);
+  --app-ui-shadow-modal: rgb(0 0 0 / 0.55);
+  --app-ui-status-active: var(--app-ui-success);
+  --app-ui-status-inactive: #b89b77;
+  --app-ui-status-neutral: var(--app-ui-muted);
+  color-scheme: dark;
+}
+
+:is(:root, :host, .app-ui-theme)
+  :where(
+    a[href],
+    button:not(:disabled),
+    summary,
+    label:has(input:not(:disabled)),
+    input:is(
+      [type="button"],
+      [type="checkbox"],
+      [type="color"],
+      [type="file"],
+      [type="radio"],
+      [type="range"],
+      [type="reset"],
+      [type="submit"]
+    ):not(:disabled),
+    [role="button"]:not([aria-disabled="true"]),
+    [role="link"]:not([aria-disabled="true"]),
+    [role="menuitem"]:not([aria-disabled="true"]),
+    [role="option"]:not([aria-disabled="true"])
+  ) {
+  cursor: var(--app-ui-cursor-pointer);
+}
+
+:is(:root, :host, .app-ui-theme)
+  :where(
+    input:not(
+      [type="button"],
+      [type="checkbox"],
+      [type="color"],
+      [type="file"],
+      [type="radio"],
+      [type="range"],
+      [type="reset"],
+      [type="submit"]
+    ),
+    textarea,
+    [contenteditable="true"]
+  ) {
+  cursor: var(--app-ui-cursor-text);
+}
+
+:is(:root, :host, .app-ui-theme)
+  :where(
+    button:disabled,
+    input:disabled,
+    select:disabled,
+    textarea:disabled,
+    [aria-disabled="true"]
+  ) {
+  cursor: var(--app-ui-cursor-disabled);
+}

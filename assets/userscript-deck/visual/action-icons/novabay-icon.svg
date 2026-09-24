@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="万象星核 NovaBay Icon">
+  <defs>
+    <linearGradient id="iconCore" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E0F2FE"/>
+      <stop offset="45%" stop-color="#22D3EE"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+
+    <linearGradient id="iconRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22D3EE"/>
+      <stop offset="55%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+
+    <radialGradient id="iconGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#22D3EE" stop-opacity="0.5"/>
+      <stop offset="70%" stop-color="#8B5CF6" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- 深空蓝圆角背景 -->
+  <rect width="512" height="512" rx="112" fill="#0B1B3A"/>
+
+  <!-- 图标主体 -->
+  <g transform="translate(256 256) scale(2.05)">
+    <!-- 光晕 -->
+    <circle r="96" fill="url(#iconGlow)"/>
+
+    <!-- 外环轨道 -->
+    <circle
+      r="80"
+      fill="none"
+      stroke="url(#iconRing)"
+      stroke-width="8"
+      stroke-linecap="round"
+      stroke-dasharray="156 52"
+      transform="rotate(-18)"
+    />
+
+    <!-- 椭圆轨道 -->
+    <ellipse
+      rx="90"
+      ry="34"
+      fill="none"
+      stroke="url(#iconRing)"
+      stroke-width="4"
+      transform="rotate(-28)"
+    />
+
+    <!-- 八芒星核 -->
+    <path
+      d="M0,-72 L10,-24 L51,-51 L24,-10 L72,0 L24,10 L51,51 L10,24 L0,72 L-10,24 L-51,51 L-24,10 L-72,0 L-24,-10 L-51,-51 L-10,-24 Z"
+      fill="url(#iconCore)"
+      opacity="0.95"
+    />
+
+    <!-- 中心核心 -->
+    <circle r="34" fill="url(#iconCore)"/>
+    <circle r="12" fill="#FFFFFF" opacity="0.9"/>
+  </g>
+</svg>

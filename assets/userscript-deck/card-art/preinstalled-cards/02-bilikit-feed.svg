@@ -1,0 +1,183 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="834" height="1112" viewBox="0 0 834 1112" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Arial,sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070A11"/>
+      <stop offset="0.45" stop-color="#0C1120"/>
+      <stop offset="1" stop-color="#080B14"/>
+    </linearGradient>
+
+    <radialGradient id="glowPink" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FB7299" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#FB7299" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowBlue" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#00A1D6" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#00A1D6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowViolet" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#7C5CFF" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#7C5CFF" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="brandGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FB7299"/>
+      <stop offset="1" stop-color="#00A1D6"/>
+    </linearGradient>
+
+    <linearGradient id="titleGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.55" stop-color="#FFC3D6"/>
+      <stop offset="1" stop-color="#7FD4F0"/>
+    </linearGradient>
+
+    <linearGradient id="borderGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FB7299" stop-opacity="0.55"/>
+      <stop offset="0.5" stop-color="#2A3350" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#00A1D6" stop-opacity="0.55"/>
+    </linearGradient>
+
+    <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FB7299" stop-opacity="0.65"/>
+      <stop offset="0.5" stop-color="#00A1D6" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#00A1D6" stop-opacity="0"/>
+    </linearGradient>
+
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M42 0H0V42" fill="none" stroke="#161D2E" stroke-width="1"/>
+    </pattern>
+
+    <radialGradient id="coreGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FB7299" stop-opacity="0.9"/>
+      <stop offset="0.4" stop-color="#00A1D6" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#7C5CFF" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="834" height="1112" fill="url(#bg)"/>
+  <rect width="834" height="1112" fill="url(#grid)" opacity="0.55"/>
+  <ellipse cx="110" cy="130" rx="380" ry="320" fill="url(#glowPink)"/>
+  <ellipse cx="750" cy="960" rx="400" ry="340" fill="url(#glowBlue)"/>
+  <ellipse cx="700" cy="200" rx="300" ry="240" fill="url(#glowViolet)"/>
+
+  <!-- 卡牌外框 -->
+  <rect x="16" y="16" width="802" height="1080" rx="30" fill="none" stroke="url(#borderGrad)" stroke-width="1.5"/>
+  <rect x="26" y="26" width="782" height="1060" rx="22" fill="none" stroke="#141B2B" stroke-width="1"/>
+
+  <!-- 顶部品牌栏 -->
+  <g transform="translate(60,50)">
+    <circle cx="22" cy="22" r="21" fill="none" stroke="url(#brandGrad)" stroke-width="1.8"/>
+    <circle cx="22" cy="22" r="13" fill="none" stroke="#FB7299" stroke-width="1" opacity="0.45"/>
+    <circle cx="22" cy="22" r="6" fill="#FB7299"/>
+    <circle cx="22" cy="1" r="2.8" fill="#00A1D6"/>
+    <circle cx="40" cy="33" r="2.8" fill="#7C5CFF"/>
+    <circle cx="4" cy="33" r="2.8" fill="#FF9A4D"/>
+  </g>
+
+  <text x="118" y="72" font-size="20" font-weight="700" fill="#F0F4FB" letter-spacing="1">万象星核</text>
+  <text x="118" y="92" font-size="11" fill="#5F6D8A" letter-spacing="2.5">NOVABAY</text>
+
+  <circle cx="688" cy="74" r="7" fill="#34D399" opacity="0.18"/>
+  <circle cx="688" cy="74" r="3.5" fill="#34D399"/>
+  <text x="774" y="78" font-size="11.5" fill="#5F6D8A" text-anchor="end" letter-spacing="1">BILIKIT v2.4</text>
+
+  <line x1="60" y1="124" x2="774" y2="124" stroke="#1A2234" stroke-width="1"/>
+
+  <!-- 标题区 -->
+  <text x="60" y="230" font-size="54" font-weight="800" fill="url(#titleGrad)" letter-spacing="-1.5">bilikit-feed</text>
+  <text x="60" y="276" font-size="23" fill="#9AA7BF" letter-spacing="3">B站个性化推荐流</text>
+
+  <line x1="60" y1="320" x2="774" y2="320" stroke="url(#lineGrad)" stroke-width="1"/>
+
+  <!-- ================= 中央星核 ================= -->
+  <g transform="translate(417, 590)">
+    <!-- 外圈光晕 -->
+    <circle cx="0" cy="0" r="150" fill="url(#coreGlow)" opacity="0.35"/>
+    <!-- 轨道环 -->
+    <ellipse cx="0" cy="0" rx="130" ry="46" fill="none" stroke="#00A1D6" stroke-opacity="0.35" stroke-width="1.2" transform="rotate(-20)"/>
+    <ellipse cx="0" cy="0" rx="130" ry="46" fill="none" stroke="#FB7299" stroke-opacity="0.35" stroke-width="1.2" transform="rotate(40)"/>
+    <ellipse cx="0" cy="0" rx="130" ry="46" fill="none" stroke="#7C5CFF" stroke-opacity="0.28" stroke-width="1.2" transform="rotate(100)"/>
+    <!-- 核心 -->
+    <circle cx="0" cy="0" r="34" fill="none" stroke="url(#brandGrad)" stroke-width="2"/>
+    <circle cx="0" cy="0" r="18" fill="#FB7299" opacity="0.9" filter="url(#softGlow)"/>
+    <circle cx="0" cy="0" r="8" fill="#FFFFFF" opacity="0.95"/>
+    <!-- 核心内星形 -->
+    <path d="M0,-14 L3.5,-4.5 L13,-4.5 L5.5,2 L8.5,11.5 L0,6 L-8.5,11.5 L-5.5,2 L-13,-4.5 L-3.5,-4.5 Z" fill="#FFFFFF" opacity="0.85"/>
+  </g>
+
+  <!-- ================= 环绕图标 ================= -->
+  <!-- 图标 1：小电视 / B站 -->
+  <g transform="translate(187, 430)">
+    <circle cx="0" cy="0" r="46" fill="#0F1626" stroke="#FB7299" stroke-opacity="0.45" stroke-width="1.2"/>
+    <rect x="-16" y="-12" width="32" height="24" rx="5" fill="none" stroke="#FB7299" stroke-width="2"/>
+    <path d="M-16,-12 L-24,-22" stroke="#FB7299" stroke-width="2" stroke-linecap="round"/>
+    <path d="M16,-12 L24,-22" stroke="#FB7299" stroke-width="2" stroke-linecap="round"/>
+    <path d="M-4,-2 L6,4 L-4,10 Z" fill="#FB7299"/>
+  </g>
+
+  <!-- 图标 2：推荐流卡片堆叠 -->
+  <g transform="translate(647, 430)">
+    <circle cx="0" cy="0" r="46" fill="#0F1626" stroke="#00A1D6" stroke-opacity="0.45" stroke-width="1.2"/>
+    <rect x="-18" y="-14" width="30" height="22" rx="4" fill="none" stroke="#00A1D6" stroke-width="2"/>
+    <rect x="-12" y="-8" width="30" height="22" rx="4" fill="none" stroke="#00A1D6" stroke-width="2" opacity="0.7"/>
+    <rect x="-6" y="-2" width="30" height="22" rx="4" fill="none" stroke="#00A1D6" stroke-width="2" opacity="0.45"/>
+  </g>
+
+  <!-- 图标 3：神经网络 / 算法 -->
+  <g transform="translate(187, 750)">
+    <circle cx="0" cy="0" r="46" fill="#0F1626" stroke="#7C5CFF" stroke-opacity="0.45" stroke-width="1.2"/>
+    <circle cx="-12" cy="-10" r="5" fill="none" stroke="#7C5CFF" stroke-width="1.8"/>
+    <circle cx="-12" cy="10" r="5" fill="none" stroke="#7C5CFF" stroke-width="1.8"/>
+    <circle cx="12" cy="0" r="5" fill="none" stroke="#7C5CFF" stroke-width="1.8"/>
+    <line x1="-7" y1="-8" x2="7" y2="-2" stroke="#7C5CFF" stroke-width="1.5" opacity="0.7"/>
+    <line x1="-7" y1="8" x2="7" y2="2" stroke="#7C5CFF" stroke-width="1.5" opacity="0.7"/>
+    <line x1="-12" y1="-5" x2="-12" y2="5" stroke="#7C5CFF" stroke-width="1.5" opacity="0.5"/>
+  </g>
+
+  <!-- 图标 4：用户个性化 / 星标 -->
+  <g transform="translate(647, 750)">
+    <circle cx="0" cy="0" r="46" fill="#0F1626" stroke="#FF9A4D" stroke-opacity="0.45" stroke-width="1.2"/>
+    <circle cx="0" cy="-8" r="9" fill="none" stroke="#FF9A4D" stroke-width="2"/>
+    <path d="M-18,18 Q-18,4 0,4 Q18,4 18,18" fill="none" stroke="#FF9A4D" stroke-width="2" stroke-linecap="round"/>
+    <path d="M16,-16 L18,-11 L23,-11 L19,-7 L21,-2 L16,-5 L11,-2 L13,-7 L9,-11 L14,-11 Z" fill="#FF9A4D" opacity="0.9"/>
+  </g>
+
+  <!-- 图标 5：播放按钮 / 视频 -->
+  <g transform="translate(417, 850)">
+    <circle cx="0" cy="0" r="36" fill="#0F1626" stroke="#FB7299" stroke-opacity="0.45" stroke-width="1.2"/>
+    <circle cx="0" cy="0" r="20" fill="none" stroke="#FB7299" stroke-width="2"/>
+    <path d="M-6,-10 L12,0 L-6,10 Z" fill="#FB7299"/>
+  </g>
+
+  <!-- 图标 6：星轨 / 向量 -->
+  <g transform="translate(417, 370)">
+    <circle cx="0" cy="0" r="36" fill="#0F1626" stroke="#00A1D6" stroke-opacity="0.45" stroke-width="1.2"/>
+    <ellipse cx="0" cy="0" rx="22" ry="10" fill="none" stroke="#00A1D6" stroke-width="1.8" transform="rotate(-30)"/>
+    <ellipse cx="0" cy="0" rx="22" ry="10" fill="none" stroke="#00A1D6" stroke-width="1.8" transform="rotate(30)" opacity="0.6"/>
+    <circle cx="0" cy="0" r="4" fill="#00A1D6"/>
+    <circle cx="18" cy="-8" r="2.5" fill="#00A1D6" opacity="0.8"/>
+  </g>
+
+  <!-- 连接线（装饰） -->
+  <g stroke="#2A3350" stroke-width="1" opacity="0.5">
+    <line x1="233" y1="430" x2="381" y2="560"/>
+    <line x1="601" y1="430" x2="453" y2="560"/>
+    <line x1="233" y1="750" x2="381" y2="620"/>
+    <line x1="601" y1="750" x2="453" y2="620"/>
+  </g>
+
+  <!-- 底部装饰线 -->
+  <line x1="60" y1="1025" x2="774" y2="1025" stroke="#1C2437" stroke-width="1" opacity="0.6"/>
+
+  <!-- 底部信息 -->
+  <text x="60" y="1058" font-size="12" fill="#3E4A63" letter-spacing="1">NovaBay · 万象星核</text>
+  <text x="774" y="1058" font-size="12" fill="#3E4A63" text-anchor="end" letter-spacing="1">834 × 1112</text>
+</svg>

@@ -1,0 +1,201 @@
+<svg width="834" height="1112" viewBox="0 0 834 1112" xmlns="http://www.w3.org/2000/svg" font-family="'PingFang SC','Microsoft YaHei','Helvetica Neue',Arial,sans-serif">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="32%" r="78%">
+      <stop offset="0%" stop-color="#16294f"/>
+      <stop offset="42%" stop-color="#0a1329"/>
+      <stop offset="100%" stop-color="#03050c"/>
+    </radialGradient>
+
+    <radialGradient id="haloGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7fe4ff" stop-opacity="0.85"/>
+      <stop offset="34%" stop-color="#3d8bff" stop-opacity="0.34"/>
+      <stop offset="68%" stop-color="#5b3cff" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#5b3cff" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="coreGrad" cx="42%" cy="36%" r="68%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="20%" stop-color="#b6f2ff"/>
+      <stop offset="45%" stop-color="#4fb8ff"/>
+      <stop offset="72%" stop-color="#2456e0"/>
+      <stop offset="100%" stop-color="#0a1a58"/>
+    </radialGradient>
+
+    <linearGradient id="frameGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4fd7ff"/>
+      <stop offset="45%" stop-color="#2a5c9e"/>
+      <stop offset="100%" stop-color="#b06bff"/>
+    </linearGradient>
+
+    <linearGradient id="ringA" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4fd7ff" stop-opacity="0"/>
+      <stop offset="28%" stop-color="#4fd7ff" stop-opacity="0.95"/>
+      <stop offset="72%" stop-color="#b06bff" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#b06bff" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="lineFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4fd7ff" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#2b5a96" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#2b5a96" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="glowM" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="glowS" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="2.5" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <clipPath id="barClip">
+      <rect x="62" y="666" width="710" height="22" rx="11"/>
+    </clipPath>
+
+    <clipPath id="artClip">
+      <rect x="58" y="176" width="718" height="424" rx="16"/>
+    </clipPath>
+  </defs>
+
+  <rect width="834" height="1112" fill="url(#bgGrad)"/>
+
+  <g fill="#cfe9ff">
+    <circle cx="72" cy="176" r="1.5" opacity="0.55"/>
+    <circle cx="148" cy="92" r="1.2" opacity="0.4"/>
+    <circle cx="236" cy="152" r="1.8" opacity="0.6"/>
+    <circle cx="318" cy="86" r="1.1" opacity="0.35"/>
+    <circle cx="402" cy="140" r="1.4" opacity="0.5"/>
+    <circle cx="498" cy="78" r="1.6" opacity="0.45"/>
+    <circle cx="586" cy="134" r="1.2" opacity="0.4"/>
+    <circle cx="668" cy="96" r="1.7" opacity="0.55"/>
+    <circle cx="752" cy="164" r="1.3" opacity="0.42"/>
+    <circle cx="96" cy="286" r="1.4" opacity="0.5"/>
+    <circle cx="186" cy="352" r="1.1" opacity="0.35"/>
+    <circle cx="700" cy="300" r="1.5" opacity="0.5"/>
+    <circle cx="762" cy="392" r="1.2" opacity="0.4"/>
+    <circle cx="84" cy="470" r="1.6" opacity="0.5"/>
+    <circle cx="142" cy="540" r="1.2" opacity="0.36"/>
+    <circle cx="726" cy="520" r="1.4" opacity="0.45"/>
+    <circle cx="660" cy="600" r="1.1" opacity="0.35"/>
+    <circle cx="110" cy="642" r="1.3" opacity="0.4"/>
+    <circle cx="740" cy="676" r="1.5" opacity="0.45"/>
+    <circle cx="88" cy="760" r="1.2" opacity="0.36"/>
+    <circle cx="760" cy="800" r="1.4" opacity="0.42"/>
+    <circle cx="130" cy="880" r="1.1" opacity="0.32"/>
+    <circle cx="712" cy="900" r="1.3" opacity="0.38"/>
+    <circle cx="96" cy="990" r="1.5" opacity="0.42"/>
+    <circle cx="746" cy="1010" r="1.2" opacity="0.36"/>
+    <circle cx="200" cy="1060" r="1.4" opacity="0.4"/>
+    <circle cx="620" cy="1070" r="1.3" opacity="0.38"/>
+    <circle cx="404" cy="60" r="1.2" opacity="0.4"/>
+    <circle cx="548" cy="196" r="1.1" opacity="0.3"/>
+    <circle cx="278" cy="240" r="1.3" opacity="0.35"/>
+  </g>
+
+  <rect x="20" y="20" width="794" height="1072" rx="28" fill="none" stroke="url(#frameGrad)" stroke-width="2.5" opacity="0.9"/>
+  <rect x="32" y="32" width="770" height="1048" rx="20" fill="none" stroke="#2b5a96" stroke-width="1" opacity="0.5"/>
+
+  <g stroke="#5fd8ff" stroke-width="2" fill="none" opacity="0.65" stroke-linecap="round">
+    <path d="M46 100 L46 60 Q46 46 60 46 L100 46"/>
+    <path d="M788 100 L788 60 Q788 46 774 46 L734 46"/>
+    <path d="M46 1012 L46 1052 Q46 1066 60 1066 L100 1066"/>
+    <path d="M788 1012 L788 1052 Q788 1066 774 1066 L734 1066"/>
+  </g>
+
+  <text x="62" y="98" fill="#8fe6ff" font-size="21" letter-spacing="8" font-weight="600">万象星核</text>
+  <text x="62" y="126" fill="#3f6f9e" font-size="13" letter-spacing="5">NOVABAY · ARCHIVE</text>
+  <g text-anchor="end">
+    <text x="772" y="96" fill="#7fb8e6" font-size="15" letter-spacing="2">No. 007</text>
+    <text x="772" y="122" fill="#3f6f9e" font-size="12" letter-spacing="3">RARITY · ★★★★☆</text>
+  </g>
+
+  <line x1="62" y1="150" x2="772" y2="150" stroke="#2b5a96" stroke-width="1" opacity="0.7"/>
+  <line x1="62" y1="150" x2="300" y2="150" stroke="#4fd7ff" stroke-width="2" opacity="0.9" filter="url(#glowS)"/>
+
+  <rect x="58" y="176" width="718" height="424" rx="16" fill="#08111f" fill-opacity="0.5" stroke="#1e3f6b" stroke-width="1"/>
+
+  <g clip-path="url(#artClip)">
+    <g stroke="#1a3a63" stroke-width="0.6" opacity="0.28">
+      <line x1="58" y1="260" x2="776" y2="260"/>
+      <line x1="58" y1="375" x2="776" y2="375"/>
+      <line x1="58" y1="490" x2="776" y2="490"/>
+      <line x1="238" y1="176" x2="238" y2="600"/>
+      <line x1="417" y1="176" x2="417" y2="600"/>
+      <line x1="596" y1="176" x2="596" y2="600"/>
+    </g>
+
+    <circle cx="417" cy="375" r="195" fill="url(#haloGrad)"/>
+
+    <circle cx="417" cy="375" r="140" fill="none" stroke="#4fd7ff" stroke-width="0.9" opacity="0.28" stroke-dasharray="4 10"/>
+    <circle cx="417" cy="375" r="118" fill="none" stroke="#4fd7ff" stroke-width="1" opacity="0.4"/>
+
+    <ellipse cx="417" cy="375" rx="168" ry="46" fill="none" stroke="url(#ringA)" stroke-width="2.5" transform="rotate(-16 417 375)" opacity="0.95"/>
+    <ellipse cx="417" cy="375" rx="148" ry="40" fill="none" stroke="url(#ringA)" stroke-width="1.5" transform="rotate(20 417 375)" opacity="0.6"/>
+
+    <circle cx="256" cy="329" r="4" fill="#7fe4ff" filter="url(#glowM)"/>
+    <circle cx="322" cy="361" r="2.8" fill="#b0f0ff" filter="url(#glowM)"/>
+    <circle cx="344" cy="437" r="3.2" fill="#a06bff" filter="url(#glowM)"/>
+    <circle cx="578" cy="421" r="4" fill="#b06bff" filter="url(#glowM)"/>
+
+    <circle cx="417" cy="375" r="80" fill="url(#coreGrad)"/>
+    <g fill="none" stroke="#d8f6ff" stroke-width="1" opacity="0.3">
+      <ellipse cx="417" cy="375" rx="80" ry="28"/>
+      <ellipse cx="417" cy="375" rx="52" ry="80"/>
+    </g>
+    <circle cx="417" cy="375" r="79" fill="none" stroke="#bff0ff" stroke-width="2" opacity="0.55"/>
+
+    <ellipse cx="381" cy="335" rx="33" ry="21" fill="#ffffff" opacity="0.22" transform="rotate(-25 381 335)" filter="url(#glowM)"/>
+
+    <g fill="#ffffff" opacity="0.95" filter="url(#glowM)">
+      <path d="M374 348 L374 402 L412 375 Z"/>
+      <path d="M420 348 L420 402 L458 375 Z"/>
+    </g>
+  </g>
+
+  <text x="62" y="648" fill="#5fd8ff" font-size="13" letter-spacing="4">SKIP SEGMENTS · 跳过片段</text>
+  <text x="772" y="648" text-anchor="end" fill="#3f6f9e" font-size="12" letter-spacing="2">04 ACTIVE</text>
+
+  <rect x="62" y="666" width="710" height="22" rx="11" fill="#0a1730" stroke="#1e3f6b" stroke-width="1"/>
+  <g clip-path="url(#barClip)">
+    <rect x="128" y="666" width="96" height="22" fill="#fb7299"/>
+    <rect x="352" y="666" width="72" height="22" fill="#3ce0ff"/>
+    <rect x="520" y="666" width="118" height="22" fill="#a06bff"/>
+  </g>
+
+  <g font-size="11" letter-spacing="1.5">
+    <text x="176" y="710" text-anchor="middle" fill="#fb7299">OP</text>
+    <text x="388" y="710" text-anchor="middle" fill="#3ce0ff">ED</text>
+    <text x="579" y="710" text-anchor="middle" fill="#a06bff">SPONSOR</text>
+  </g>
+
+  <text x="62" y="790" fill="#e8f6ff" font-size="42" font-weight="700" letter-spacing="0.5">Bilibili segments</text>
+  <text x="62" y="824" fill="#6fa8d8" font-size="19" letter-spacing="3">B站跳过片段</text>
+
+  <g font-size="13">
+    <rect x="62" y="856" width="96" height="26" rx="7" fill="#12294a" stroke="#2b5a96" stroke-width="1"/>
+    <text x="110" y="874" text-anchor="middle" fill="#7fd8ff">跳过片段</text>
+
+    <rect x="168" y="856" width="96" height="26" rx="7" fill="#12294a" stroke="#2b5a96" stroke-width="1"/>
+    <text x="216" y="874" text-anchor="middle" fill="#7fd8ff">OP · ED</text>
+
+    <rect x="274" y="856" width="104" height="26" rx="7" fill="#12294a" stroke="#2b5a96" stroke-width="1"/>
+    <text x="326" y="874" text-anchor="middle" fill="#7fd8ff">自动跳过</text>
+  </g>
+
+  <line x1="62" y1="930" x2="772" y2="930" stroke="url(#lineFade)" stroke-width="1"/>
+
+  <text x="62" y="990" fill="#8aa8c8" font-size="13" letter-spacing="0.5">自动识别片头、片尾与赞助片段，无缝跳过，观看不被打断。</text>
+
+  <line x1="62" y1="1046" x2="772" y2="1046" stroke="#2b5a96" stroke-width="1" opacity="0.6"/>
+
+  <text x="62" y="1070" fill="#3f6f9e" font-size="11" letter-spacing="2.5">© NOVABAY ARCHIVE · 万象星核计划</text>
+  <text x="772" y="1070" text-anchor="end" fill="#3f6f9e" font-size="11" letter-spacing="2.5">834 × 1112</text>
+</svg>

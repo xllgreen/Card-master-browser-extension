@@ -1,0 +1,301 @@
+<svg width="834" height="1112" viewBox="0 0 834 1112" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 背景渐变 -->
+    <radialGradient id="bgGrad" cx="50%" cy="38%" r="72%">
+      <stop offset="0%" stop-color="#16203a"/>
+      <stop offset="50%" stop-color="#0a0f1e"/>
+      <stop offset="100%" stop-color="#04060c"/>
+    </radialGradient>
+
+    <!-- 边框渐变 -->
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FB7299"/>
+      <stop offset="35%" stop-color="#A855F7"/>
+      <stop offset="70%" stop-color="#00A1D6"/>
+      <stop offset="100%" stop-color="#22D3EE"/>
+    </linearGradient>
+
+    <!-- 标题渐变 -->
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FB7299"/>
+      <stop offset="48%" stop-color="#e9d5ff"/>
+      <stop offset="100%" stop-color="#00A1D6"/>
+    </linearGradient>
+
+    <!-- 核心渐变 -->
+    <radialGradient id="coreGrad" cx="50%" cy="42%" r="58%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="16%" stop-color="#fce7f3"/>
+      <stop offset="42%" stop-color="#FB7299"/>
+      <stop offset="72%" stop-color="#A855F7"/>
+      <stop offset="100%" stop-color="#00A1D6" stop-opacity="0.12"/>
+    </radialGradient>
+
+    <!-- 核心光晕 -->
+    <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FB7299" stop-opacity="0.55"/>
+      <stop offset="45%" stop-color="#A855F7" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#A855F7" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- 滤镜 -->
+    <filter id="glowPink" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowSoft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="3.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowBig" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="18" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- 网格图案 -->
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M 44 0 L 0 0 0 44" fill="none" stroke="#16203a" stroke-width="0.6"/>
+    </pattern>
+
+    <style>
+      .cn { font-family: 'PingFang SC','Microsoft YaHei','Noto Sans SC',sans-serif; }
+      .en { font-family: 'Inter','Helvetica Neue',Arial,sans-serif; }
+    </style>
+  </defs>
+
+  <!-- ===== 背景 ===== -->
+  <rect width="834" height="1112" fill="url(#bgGrad)"/>
+  <rect width="834" height="1112" fill="url(#grid)" opacity="0.6"/>
+
+  <!-- 光斑 -->
+  <circle cx="110" cy="170" r="230" fill="#FB7299" opacity="0.055"/>
+  <circle cx="730" cy="890" r="270" fill="#00A1D6" opacity="0.055"/>
+  <circle cx="417" cy="560" r="320" fill="#A855F7" opacity="0.045"/>
+
+  <!-- ===== 外框 ===== -->
+  <rect x="22" y="22" width="790" height="1068" rx="30" fill="none" stroke="url(#borderGrad)" stroke-width="3"/>
+  <rect x="32" y="32" width="770" height="1048" rx="24" fill="none" stroke="#2a3a5a" stroke-width="1" opacity="0.7"/>
+
+  <!-- 四角装饰 -->
+  <path d="M 62 100 L 62 62 L 100 62" fill="none" stroke="#FB7299" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="62" cy="62" r="3.5" fill="#FB7299" filter="url(#glowSoft)"/>
+  <path d="M 772 100 L 772 62 L 734 62" fill="none" stroke="#00A1D6" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="772" cy="62" r="3.5" fill="#00A1D6" filter="url(#glowSoft)"/>
+  <path d="M 62 1012 L 62 1050 L 100 1050" fill="none" stroke="#00A1D6" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="62" cy="1050" r="3.5" fill="#00A1D6" filter="url(#glowSoft)"/>
+  <path d="M 772 1012 L 772 1050 L 734 1050" fill="none" stroke="#FB7299" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="772" cy="1050" r="3.5" fill="#FB7299" filter="url(#glowSoft)"/>
+
+  <!-- ===== 标题区 ===== -->
+  <line x1="72" y1="95" x2="300" y2="95" stroke="#FB7299" stroke-width="1.5" opacity="0.55"/>
+  <line x1="534" y1="95" x2="762" y2="95" stroke="#00A1D6" stroke-width="1.5" opacity="0.55"/>
+  <circle cx="417" cy="95" r="4.5" fill="#A855F7" filter="url(#glowPink)"/>
+  <circle cx="372" cy="95" r="2" fill="#FB7299"/>
+  <circle cx="462" cy="95" r="2" fill="#00A1D6"/>
+
+  <text x="417" y="142" text-anchor="middle" class="cn" font-size="19" fill="#8899bb" letter-spacing="10">万象星核 · NOVABAY</text>
+
+  <text x="417" y="208" text-anchor="middle" class="en" font-size="42" font-weight="800" fill="url(#titleGrad)" letter-spacing="0.5">Bilibili-Recommendation</text>
+
+  <text x="417" y="254" text-anchor="middle" class="cn" font-size="21" fill="#c0ccee" letter-spacing="14">B站算法推荐</text>
+
+  <line x1="140" y1="286" x2="694" y2="286" stroke="#2a3a5a" stroke-width="1"/>
+  <circle cx="417" cy="286" r="4" fill="#FB7299" filter="url(#glowPink)"/>
+  <circle cx="300" cy="286" r="2" fill="#A855F7"/>
+  <circle cx="534" cy="286" r="2" fill="#00A1D6"/>
+
+  <!-- ===== 核心区 ===== -->
+  <!-- 标注 -->
+  <text x="417" y="322" text-anchor="middle" class="cn" font-size="13" fill="#5a6a8a" letter-spacing="5">实时行为流</text>
+  <text x="417" y="798" text-anchor="middle" class="cn" font-size="13" fill="#5a6a8a" letter-spacing="5">多目标排序输出</text>
+  <text x="108" y="565" text-anchor="middle" class="cn" font-size="12" fill="#5a6a8a" letter-spacing="2">用户画像</text>
+  <text x="726" y="565" text-anchor="middle" class="cn" font-size="12" fill="#5a6a8a" letter-spacing="2">内容特征</text>
+
+  <!-- 外轨道 -->
+  <circle cx="417" cy="560" r="225" fill="none" stroke="#1e2a4a" stroke-width="1" stroke-dasharray="3 9"/>
+  <circle cx="417" cy="560" r="225" fill="none" stroke="#FB7299" stroke-width="1.5" stroke-dasharray="45 1369" opacity="0.7" transform="rotate(-35 417 560)"/>
+
+  <!-- 内轨道 -->
+  <circle cx="417" cy="560" r="155" fill="none" stroke="#1e2a4a" stroke-width="1" stroke-dasharray="2 7"/>
+  <circle cx="417" cy="560" r="155" fill="none" stroke="#00A1D6" stroke-width="1.5" stroke-dasharray="35 939" opacity="0.7" transform="rotate(55 417 560)"/>
+
+  <!-- 装饰圆环 -->
+  <circle cx="417" cy="560" r="122" fill="none" stroke="#A855F7" stroke-width="0.8" stroke-dasharray="2 5 10 5" opacity="0.35"/>
+
+  <!-- 外八边形 -->
+  <polygon points="625,646 503,768 331,768 209,646 209,474 331,352 503,352 625,474" fill="none" stroke="#1e2a4a" stroke-width="1" stroke-dasharray="4 7" opacity="0.5"/>
+
+  <!-- 连接线 -->
+  <g stroke="#243354" stroke-width="1" opacity="0.7">
+    <line x1="417" y1="560" x2="572" y2="560"/>
+    <line x1="417" y1="560" x2="417" y2="715"/>
+    <line x1="417" y1="560" x2="262" y2="560"/>
+    <line x1="417" y1="560" x2="417" y2="405"/>
+    <line x1="572" y1="560" x2="625" y2="646"/>
+    <line x1="572" y1="560" x2="625" y2="474"/>
+    <line x1="417" y1="715" x2="503" y2="768"/>
+    <line x1="417" y1="715" x2="331" y2="768"/>
+    <line x1="262" y1="560" x2="209" y2="646"/>
+    <line x1="262" y1="560" x2="209" y2="474"/>
+    <line x1="417" y1="405" x2="331" y2="352"/>
+    <line x1="417" y1="405" x2="503" y2="352"/>
+  </g>
+
+  <!-- 流动虚线 -->
+  <g stroke-width="1.5" opacity="0.5" fill="none">
+    <line x1="417" y1="560" x2="572" y2="560" stroke="#FB7299" stroke-dasharray="5 14">
+      <animate attributeName="stroke-dashoffset" values="0;-38" dur="1.8s" repeatCount="indefinite"/>
+    </line>
+    <line x1="417" y1="560" x2="417" y2="715" stroke="#00A1D6" stroke-dasharray="5 14">
+      <animate attributeName="stroke-dashoffset" values="0;-38" dur="1.8s" repeatCount="indefinite"/>
+    </line>
+    <line x1="417" y1="560" x2="262" y2="560" stroke="#A855F7" stroke-dasharray="5 14">
+      <animate attributeName="stroke-dashoffset" values="0;-38" dur="1.8s" repeatCount="indefinite"/>
+    </line>
+    <line x1="417" y1="560" x2="417" y2="405" stroke="#22D3EE" stroke-dasharray="5 14">
+      <animate attributeName="stroke-dashoffset" values="0;-38" dur="1.8s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <!-- 内节点 -->
+  <g filter="url(#glowSoft)">
+    <circle cx="572" cy="560" r="9" fill="#FB7299"/>
+    <circle cx="417" cy="715" r="9" fill="#FB7299"/>
+    <circle cx="262" cy="560" r="9" fill="#FB7299"/>
+    <circle cx="417" cy="405" r="9" fill="#FB7299"/>
+  </g>
+  <g fill="#fff">
+    <circle cx="572" cy="560" r="3"/>
+    <circle cx="417" cy="715" r="3"/>
+    <circle cx="262" cy="560" r="3"/>
+    <circle cx="417" cy="405" r="3"/>
+  </g>
+
+  <!-- 外节点 -->
+  <g filter="url(#glowSoft)">
+    <circle cx="625" cy="646" r="7" fill="#00A1D6"/>
+    <circle cx="503" cy="768" r="7" fill="#A855F7"/>
+    <circle cx="331" cy="768" r="7" fill="#22D3EE"/>
+    <circle cx="209" cy="646" r="7" fill="#00A1D6"/>
+    <circle cx="209" cy="474" r="7" fill="#A855F7"/>
+    <circle cx="331" cy="352" r="7" fill="#22D3EE"/>
+    <circle cx="503" cy="352" r="7" fill="#00A1D6"/>
+    <circle cx="625" cy="474" r="7" fill="#A855F7"/>
+  </g>
+  <g fill="#fff" opacity="0.9">
+    <circle cx="625" cy="646" r="2.2"/>
+    <circle cx="503" cy="768" r="2.2"/>
+    <circle cx="331" cy="768" r="2.2"/>
+    <circle cx="209" cy="646" r="2.2"/>
+    <circle cx="209" cy="474" r="2.2"/>
+    <circle cx="331" cy="352" r="2.2"/>
+    <circle cx="503" cy="352" r="2.2"/>
+    <circle cx="625" cy="474" r="2.2"/>
+  </g>
+
+  <!-- 核心光晕 -->
+  <circle cx="417" cy="560" r="150" fill="url(#coreGlow)" filter="url(#glowBig)"/>
+
+  <!-- 脉冲动画 -->
+  <circle cx="417" cy="560" r="95" fill="none" stroke="#FB7299" stroke-width="2">
+    <animate attributeName="r" values="95;135" dur="2.6s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.55;0" dur="2.6s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="417" cy="560" r="95" fill="none" stroke="#00A1D6" stroke-width="1.5">
+    <animate attributeName="r" values="95;135" dur="2.6s" begin="1.3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.55;0" dur="2.6s" begin="1.3s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- 核心圆 -->
+  <circle cx="417" cy="560" r="95" fill="url(#coreGrad)" opacity="0.95"/>
+  <circle cx="417" cy="560" r="95" fill="none" stroke="#FB7299" stroke-width="2.5" filter="url(#glowPink)"/>
+  <circle cx="417" cy="560" r="78" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.4"/>
+  <circle cx="417" cy="560" r="60" fill="none" stroke="#ffffff" stroke-width="0.8" opacity="0.22" stroke-dasharray="3 5"/>
+
+  <!-- B站小电视图标 -->
+  <g transform="translate(417, 568)">
+    <line x1="-30" y1="-36" x2="-42" y2="-56" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="30" y1="-36" x2="42" y2="-56" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+    <rect x="-52" y="-36" width="104" height="72" rx="16" fill="none" stroke="#fff" stroke-width="3.5"/>
+    <circle cx="-22" cy="0" r="7" fill="#fff"/>
+    <circle cx="22" cy="0" r="7" fill="#fff"/>
+    <path d="M -14 20 Q 0 32 14 20" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- 漂浮粒子 -->
+  <g fill="#FB7299" opacity="0.5">
+    <circle cx="148" cy="430" r="2"/>
+    <circle cx="686" cy="390" r="2"/>
+    <circle cx="720" cy="690" r="2"/>
+    <circle cx="132" cy="710" r="2"/>
+    <circle cx="300" cy="312" r="1.5"/>
+    <circle cx="552" cy="806" r="1.5"/>
+  </g>
+  <g fill="#00A1D6" opacity="0.5">
+    <circle cx="176" cy="386" r="1.5"/>
+    <circle cx="662" cy="436" r="1.5"/>
+    <circle cx="698" cy="636" r="1.5"/>
+    <circle cx="158" cy="672" r="1.5"/>
+  </g>
+  <g stroke="#A855F7" stroke-width="1" opacity="0.35">
+    <path d="M 244 348 L 244 364 M 236 356 L 252 356"/>
+    <path d="M 636 742 L 636 758 M 628 750 L 644 750"/>
+    <path d="M 160 520 L 160 536 M 152 528 L 168 528"/>
+  </g>
+
+  <!-- 轨道光点动画 -->
+  <circle r="4" fill="#FB7299" filter="url(#glowPink)">
+    <animateMotion dur="14s" repeatCount="indefinite" path="M 417 560 m -225 0 a 225 225 0 1 1 450 0 a 225 225 0 1 1 -450 0"/>
+  </circle>
+  <circle r="3" fill="#00A1D6" filter="url(#glowSoft)">
+    <animateMotion dur="9s" repeatCount="indefinite" path="M 417 560 m -155 0 a 155 155 0 1 0 310 0 a 155 155 0 1 0 -310 0"/>
+  </circle>
+
+  <!-- ===== 底部装饰区 ===== -->
+  <!-- 分隔线 -->
+  <line x1="80" y1="862" x2="754" y2="862" stroke="#1e2a4a" stroke-width="1"/>
+  <circle cx="417" cy="862" r="5" fill="none" stroke="#FB7299" stroke-width="1.5" filter="url(#glowSoft)"/>
+  <circle cx="417" cy="862" r="1.8" fill="#FB7299"/>
+  <circle cx="300" cy="862" r="1.5" fill="#A855F7"/>
+  <circle cx="534" cy="862" r="1.5" fill="#00A1D6"/>
+
+  <!-- 装饰星图 -->
+  <g opacity="0.65">
+    <!-- 星座连线 -->
+    <g stroke="#2a3a5a" stroke-width="1" fill="none">
+      <path d="M 200 920 L 260 940 L 310 912 L 370 946 L 430 915"/>
+      <path d="M 404 915 L 460 930 L 520 908 L 580 942 L 634 918"/>
+    </g>
+    <!-- 星座节点 -->
+    <g fill="#FB7299" filter="url(#glowSoft)">
+      <circle cx="200" cy="920" r="3"/>
+      <circle cx="310" cy="912" r="3.5"/>
+      <circle cx="430" cy="915" r="2.5"/>
+      <circle cx="520" cy="908" r="3"/>
+      <circle cx="634" cy="918" r="2.5"/>
+    </g>
+    <g fill="#00A1D6" filter="url(#glowSoft)">
+      <circle cx="260" cy="940" r="2.5"/>
+      <circle cx="370" cy="946" r="3"/>
+      <circle cx="460" cy="930" r="2.5"/>
+      <circle cx="580" cy="942" r="3.5"/>
+    </g>
+    <!-- 中心亮星 -->
+    <circle cx="417" cy="930" r="5" fill="#fff" filter="url(#glowPink)"/>
+    <circle cx="417" cy="930" r="12" fill="none" stroke="#A855F7" stroke-width="0.8" opacity="0.6"/>
+  </g>
+
+  <!-- 底部版本信息 -->
+  <text x="417" y="1000" text-anchor="middle" class="cn" font-size="14" fill="#7a8aad" letter-spacing="6">万象星核 · NOVABAY</text>
+
+  <line x1="340" y1="1020" x2="494" y2="1020" stroke="#2a3a5a" stroke-width="1"/>
+
+  <text x="417" y="1048" text-anchor="middle" class="cn" font-size="12" fill="#4a5a7a" letter-spacing="4">NO. 003 · 算法序列</text>
+
+  <!-- 底部两端装饰点 -->
+  <g fill="#2a3a5a">
+    <circle cx="80" cy="1048" r="2"/>
+    <circle cx="754" cy="1048" r="2"/>
+  </g>
+
+</svg>

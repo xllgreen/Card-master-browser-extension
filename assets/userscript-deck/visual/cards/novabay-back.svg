@@ -1,0 +1,132 @@
+<svg width="1063" height="1439" viewBox="0 0 1063 1439" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 背景渐变 -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d0b22"/>
+      <stop offset="45%" stop-color="#080718"/>
+      <stop offset="100%" stop-color="#03020b"/>
+    </linearGradient>
+    <!-- 星核渐变 -->
+    <radialGradient id="coreGrad" cx="36%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="10%" stop-color="#dbf7ff"/>
+      <stop offset="26%" stop-color="#7fdcff"/>
+      <stop offset="50%" stop-color="#6a7bff"/>
+      <stop offset="74%" stop-color="#3a1f9e"/>
+      <stop offset="100%" stop-color="#120a34"/>
+    </radialGradient>
+    <!-- 插画区背景 -->
+    <radialGradient id="artBg" cx="50%" cy="46%" r="70%">
+      <stop offset="0%" stop-color="#110d36"/>
+      <stop offset="48%" stop-color="#080621"/>
+      <stop offset="100%" stop-color="#03020e"/>
+    </radialGradient>
+    <!-- 星云渐变 -->
+    <radialGradient id="nebula1" cx="30%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#7a56ff" stop-opacity="0.40"/>
+      <stop offset="100%" stop-color="#7a56ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="nebula2" cx="70%" cy="65%" r="60%">
+      <stop offset="0%" stop-color="#00c8ff" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#00c8ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="nebula3" cx="55%" cy="85%" r="50%">
+      <stop offset="0%" stop-color="#ff5ac8" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#ff5ac8" stop-opacity="0"/>
+    </radialGradient>
+    <!-- 星点图案 -->
+    <pattern id="stars" width="130" height="130" patternUnits="userSpaceOnUse">
+      <circle cx="12" cy="30" r="1.4" fill="#ffffff" opacity="0.95"/>
+      <circle cx="75" cy="95" r="1.1" fill="#aad7ff" opacity="0.8"/>
+      <circle cx="40" cy="8"  r="0.9" fill="#d2b4ff" opacity="0.7"/>
+      <circle cx="100" cy="50" r="1.2" fill="#ffffff" opacity="0.85"/>
+      <circle cx="20" cy="110" r="0.8" fill="#aad7ff" opacity="0.6"/>
+      <circle cx="115" cy="120" r="1.0" fill="#ffffff" opacity="0.7"/>
+      <circle cx="60" cy="60" r="0.7" fill="#d2b4ff" opacity="0.5"/>
+    </pattern>
+    <!-- 模糊滤镜 -->
+    <filter id="blur20" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+    <filter id="blur8" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- NOVABAY 文字渐变 -->
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a8dcff"/>
+      <stop offset="50%" stop-color="#e8f6ff"/>
+      <stop offset="100%" stop-color="#b8a8ff"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 卡牌主体背景 -->
+  <rect x="0" y="0" width="1063" height="1439" rx="26" fill="url(#bgGrad)"/>
+
+  <!-- 背景光晕 -->
+  <ellipse cx="531" cy="100" rx="600" ry="300" fill="#7a56ff" opacity="0.14" filter="url(#blur20)"/>
+  <ellipse cx="100" cy="1300" rx="400" ry="250" fill="#00beff" opacity="0.10" filter="url(#blur20)"/>
+  <ellipse cx="960" cy="1000" rx="300" ry="200" fill="#ff5ac8" opacity="0.07" filter="url(#blur20)"/>
+
+  <!-- 内边框 -->
+  <rect x="22" y="22" width="1019" height="1395" rx="16" fill="none" stroke="rgba(130,200,255,0.32)" stroke-width="1"/>
+  <rect x="23" y="23" width="1017" height="1393" rx="15" fill="none" stroke="rgba(120,160,255,0.10)" stroke-width="2"/>
+
+  <!-- 四角装饰 -->
+  <path d="M22,66 L22,22 L66,22" stroke="#7fe3ff" stroke-width="3" fill="none" opacity="0.85"/>
+  <path d="M997,22 L1041,22 L1041,66" stroke="#7fe3ff" stroke-width="3" fill="none" opacity="0.85"/>
+  <path d="M22,1373 L22,1417 L66,1417" stroke="#7fe3ff" stroke-width="3" fill="none" opacity="0.85"/>
+  <path d="M997,1417 L1041,1417 L1041,1373" stroke="#7fe3ff" stroke-width="3" fill="none" opacity="0.85"/>
+
+  <!-- 主视觉区（占据整个卡面） -->
+  <rect x="66" y="66" width="931" height="1307" rx="14" fill="url(#artBg)" stroke="rgba(120,190,255,0.22)" stroke-width="1"/>
+  <rect x="66" y="66" width="931" height="1307" rx="14" fill="url(#stars)" opacity="0.85"/>
+
+  <!-- 星云 -->
+  <ellipse cx="350" cy="500" rx="400" ry="300" fill="url(#nebula1)" filter="url(#blur20)"/>
+  <ellipse cx="780" cy="900" rx="380" ry="280" fill="url(#nebula2)" filter="url(#blur20)"/>
+  <ellipse cx="550" cy="1100" rx="350" ry="220" fill="url(#nebula3)" filter="url(#blur20)"/>
+
+  <!-- 中央光晕 -->
+  <circle cx="531.5" cy="690" r="360" fill="rgba(130,180,255,0.10)" filter="url(#blur20)"/>
+  <circle cx="531.5" cy="690" r="240" fill="rgba(150,200,255,0.16)" filter="url(#blur20)"/>
+
+  <!-- 星核本体 -->
+  <circle cx="531.5" cy="690" r="180" fill="url(#coreGrad)" filter="url(#glow)"/>
+  <!-- 星核内部高光 -->
+  <ellipse cx="485" cy="625" rx="65" ry="45" fill="rgba(255,255,255,0.35)" filter="url(#blur8)"/>
+
+  <!-- 星环 1（最内层） -->
+  <ellipse cx="531.5" cy="690" rx="310" ry="95" fill="none" stroke="rgba(130,215,255,0.5)" stroke-width="1.5" transform="rotate(-16, 531.5, 690)" filter="url(#glow)"/>
+  <circle cx="531.5" cy="595" r="5" fill="#d8f4ff" filter="url(#glow)"/>
+
+  <!-- 星环 2（中层） -->
+  <ellipse cx="531.5" cy="690" rx="370" ry="115" fill="none" stroke="rgba(190,150,255,0.4)" stroke-width="1" transform="rotate(22, 531.5, 690)" filter="url(#glow)"/>
+  <circle cx="531.5" cy="575" r="5" fill="#f0dcff" filter="url(#glow)"/>
+
+  <!-- 星环 3（外层虚线） -->
+  <ellipse cx="531.5" cy="690" rx="255" ry="255" fill="none" stroke="rgba(120,200,255,0.26)" stroke-width="1" stroke-dasharray="6 8"/>
+  <circle cx="531.5" cy="435" r="3.5" fill="#d8f4ff" opacity="0.8"/>
+
+  <!-- 星环 4（最外层装饰） -->
+  <ellipse cx="531.5" cy="690" rx="440" ry="130" fill="none" stroke="rgba(120,180,255,0.15)" stroke-width="1" transform="rotate(-40, 531.5, 690)"/>
+
+  <!-- 扫描光 -->
+  <line x1="66" y1="690" x2="997" y2="690" stroke="rgba(150,220,255,0.6)" stroke-width="2" filter="url(#blur8)"/>
+
+  <!-- 底部装饰光晕（保留氛围，无文字） -->
+  <ellipse cx="531" cy="1320" rx="380" ry="60" fill="rgba(100,160,255,0.10)" filter="url(#blur20)"/>
+
+  <!-- NOVABAY 文字（唯一文字） -->
+  <text x="531.5" y="1310" text-anchor="middle" font-size="52" font-weight="600" fill="url(#textGrad)" letter-spacing="22" font-family="PingFang SC, Microsoft YaHei, Helvetica, sans-serif" filter="url(#glow)">NOVABAY</text>
+
+  <!-- 文字下方装饰线 -->
+  <line x1="330" y1="1345" x2="733" y2="1345" stroke="rgba(130,200,255,0.35)" stroke-width="1"/>
+  <line x1="400" y1="1346" x2="663" y2="1346" stroke="rgba(130,200,255,0.12)" stroke-width="1"/>
+</svg>

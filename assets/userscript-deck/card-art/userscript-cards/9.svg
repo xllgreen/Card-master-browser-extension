@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="834" height="1112" viewBox="0 0 834 1112">
+  <defs>
+    <filter id="g1" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feComposite in="SourceGraphic" in2="b" operator="over"/>
+    </filter>
+    <filter id="g2" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="16" result="b"/>
+      <feComposite in="SourceGraphic" in2="b" operator="over"/>
+    </filter>
+    <pattern id="grid1" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ff4500" stroke-width="0.4" opacity="0.12"/>
+    </pattern>
+    <radialGradient id="bg1" cx="50%" cy="45%" r="75%">
+      <stop offset="0%" stop-color="#2a0a05"/>
+      <stop offset="55%" stop-color="#120302"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+    <linearGradient id="neon1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff4500"/>
+      <stop offset="45%" stop-color="#ffd700"/>
+      <stop offset="100%" stop-color="#ff4500"/>
+    </linearGradient>
+  </defs>
+  <rect width="834" height="1112" fill="url(#bg1)"/>
+  <rect width="834" height="1112" fill="url(#grid1)"/>
+  <rect x="18" y="18" width="798" height="1076" rx="18" fill="none" stroke="#ff4500" stroke-width="4" filter="url(#g2)" opacity="0.9"/>
+  <rect x="30" y="30" width="774" height="1052" rx="12" fill="none" stroke="url(#neon1)" stroke-width="1.5" opacity="0.7"/>
+  <path d="M50 50h60M50 50v60" stroke="#ffd700" stroke-width="2" fill="none" filter="url(#g1)"/>
+  <path d="M784 50h-60M784 50v60" stroke="#ffd700" stroke-width="2" fill="none" filter="url(#g1)"/>
+  <path d="M50 1062h60M50 1062v-60" stroke="#ffd700" stroke-width="2" fill="none" filter="url(#g1)"/>
+  <path d="M784 1062h-60M784 1062v-60" stroke="#ffd700" stroke-width="2" fill="none" filter="url(#g1)"/>
+  <text x="417" y="138" font-family="system-ui,sans-serif" font-size="54" font-weight="900" fill="#ffd700" text-anchor="middle" letter-spacing="12" filter="url(#g2)">天刃星核</text>
+  <text x="417" y="180" font-family="system-ui,sans-serif" font-size="15" fill="#ff4500" text-anchor="middle" letter-spacing="7" opacity="0.9">NOVABAY · 烈焰阵营</text>
+  <line x1="150" y1="212" x2="684" y2="212" stroke="#ff4500" stroke-width="1" opacity="0.4"/>
+  <g transform="translate(0,40)">
+    <circle cx="417" cy="560" r="180" fill="none" stroke="#ff4500" stroke-width="1" opacity="0.3" stroke-dasharray="4 8" filter="url(#g1)"/>
+    <circle cx="417" cy="560" r="150" fill="none" stroke="#ffd700" stroke-width="1.5" opacity="0.4" filter="url(#g1)"/>
+    <polygon points="417,390 540,480 540,640 417,730 294,640 294,480" fill="none" stroke="#ff4500" stroke-width="2" filter="url(#g1)"/>
+    <polygon points="417,430 505,505 505,615 417,690 329,615 329,505" fill="none" stroke="#ffd700" stroke-width="1" opacity="0.8"/>
+    <path d="M417 400 L417 720" stroke="#ffd700" stroke-width="4" filter="url(#g2)"/>
+    <path d="M297 560 L537 560" stroke="#ff4500" stroke-width="3" filter="url(#g2)"/>
+    <path d="M340 475 L494 645" stroke="#ffd700" stroke-width="1.5" opacity="0.7"/>
+    <path d="M494 475 L340 645" stroke="#ffd700" stroke-width="1.5" opacity="0.7"/>
+    <circle cx="417" cy="560" r="36" fill="#ff4500" filter="url(#g2)"/>
+    <circle cx="417" cy="560" r="18" fill="#ffd700" filter="url(#g1)"/>
+    <circle cx="417" cy="560" r="7" fill="#fff"/>
+    <circle cx="417" cy="400" r="4" fill="#ffd700" filter="url(#g1)"/>
+    <circle cx="417" cy="720" r="4" fill="#ffd700" filter="url(#g1)"/>
+    <circle cx="297" cy="560" r="4" fill="#ff4500" filter="url(#g1)"/>
+    <circle cx="537" cy="560" r="4" fill="#ff4500" filter="url(#g1)"/>
+  </g>
+  <text x="417" y="1070" font-family="system-ui,sans-serif" font-size="14" fill="#ff4500" text-anchor="middle" letter-spacing="5" opacity="0.7">NOVABAY-001</text>
+</svg>

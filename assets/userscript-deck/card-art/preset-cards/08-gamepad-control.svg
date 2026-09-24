@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="834" height="1112" viewBox="0 0 834 1112" font-family="'Segoe UI','PingFang SC','Microsoft YaHei',Arial,sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#05070f"/>
+      <stop offset="45%" stop-color="#0d142c"/>
+      <stop offset="100%" stop-color="#06080f"/>
+    </linearGradient>
+
+    <linearGradient id="frameGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#f472b6"/>
+    </linearGradient>
+
+    <linearGradient id="padGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2b3560"/>
+      <stop offset="55%" stop-color="#1a2244"/>
+      <stop offset="100%" stop-color="#101733"/>
+    </linearGradient>
+
+    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#22d3ee" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#f472b6" stop-opacity="0"/>
+    </linearGradient>
+
+    <radialGradient id="glowCyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="glowPink" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f472b6" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#f472b6" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M 42 0 L 0 0 0 42" fill="none" stroke="#22d3ee" stroke-width="0.7" opacity="0.09"/>
+    </pattern>
+  </defs>
+
+  <!-- ===== 背景 ===== -->
+  <rect width="834" height="1112" fill="url(#bgGrad)"/>
+  <rect width="834" height="1112" fill="url(#grid)"/>
+
+  <!-- 背景光晕 -->
+  <circle cx="110" cy="170" r="310" fill="url(#glowCyan)"/>
+  <circle cx="740" cy="960" r="330" fill="url(#glowPink)"/>
+  <ellipse cx="417" cy="620" rx="330" ry="210" fill="url(#glowCyan)" opacity="0.8"/>
+
+  <!-- 星点 -->
+  <g fill="#7dd3fc" opacity="0.55">
+    <circle cx="118" cy="392" r="1.6"/>
+    <circle cx="712" cy="248" r="1.4"/>
+    <circle cx="86" cy="688" r="1.8"/>
+    <circle cx="756" cy="612" r="1.5"/>
+    <circle cx="196" cy="1024" r="1.3"/>
+    <circle cx="662" cy="1084" r="1.7"/>
+    <circle cx="748" cy="128" r="1.2"/>
+    <circle cx="132" cy="872" r="1.4"/>
+  </g>
+
+  <!-- ===== 外框 ===== -->
+  <rect x="40" y="40" width="754" height="1032" rx="30" fill="none" stroke="url(#frameGrad)" stroke-width="2" opacity="0.85"/>
+  <rect x="52" y="52" width="730" height="1008" rx="22" fill="none" stroke="#22d3ee" stroke-width="1" opacity="0.16"/>
+
+  <!-- 四角装饰 -->
+  <g stroke="#22d3ee" stroke-width="2.5" fill="none" opacity="0.85" stroke-linecap="round">
+    <path d="M 62 148 L 62 62 L 148 62"/>
+    <path d="M 686 62 L 772 62 L 772 148"/>
+    <path d="M 62 964 L 62 1050 L 148 1050"/>
+    <path d="M 686 1050 L 772 1050 L 772 964"/>
+  </g>
+
+  <!-- ===== 顶部标签 ===== -->
+  <rect x="317" y="94" width="200" height="36" rx="18" fill="#22d3ee" fill-opacity="0.08" stroke="#22d3ee" stroke-opacity="0.55" stroke-width="1.2"/>
+  <text x="417" y="118" text-anchor="middle" font-size="13" font-weight="600" letter-spacing="4" fill="#67e8f9">NOVA MODULE 07</text>
+
+  <!-- ===== 主标题 ===== -->
+  <text x="417" y="206" text-anchor="middle" font-size="52" font-weight="800" letter-spacing="5" fill="#eaf4ff" filter="url(#glow)">GAMEPAD</text>
+  <text x="417" y="264" text-anchor="middle" font-size="52" font-weight="800" letter-spacing="5" fill="#eaf4ff" filter="url(#glow)">CONTROL</text>
+
+  <!-- 中文副标题 -->
+  <text x="417" y="316" text-anchor="middle" font-size="24" font-weight="500" letter-spacing="14" fill="#5eead4" opacity="0.95">手柄控制</text>
+
+  <!-- 分隔线 + 菱形 -->
+  <line x1="120" y1="352" x2="714" y2="352" stroke="url(#lineGrad)" stroke-width="1.5"/>
+  <rect x="410" y="346" width="14" height="14" fill="#0a0f1f" stroke="#22d3ee" stroke-width="1.5" transform="rotate(45 417 353)"/>
+
+  <!-- ===== 手柄图形（放大并居中） ===== -->
+  <ellipse cx="417" cy="820" rx="255" ry="28" fill="#22d3ee" opacity="0.14" filter="url(#softGlow)"/>
+
+  <g transform="translate(58, 362) scale(1.2)">
+    <!-- 外发光描边 -->
+    <path d="M 300,70 C 205,70 140,85 108,128 C 76,171 58,262 82,312 C 104,358 158,368 192,330 C 215,306 220,290 240,282 L 360,282 C 380,290 385,306 408,330 C 442,368 496,358 518,312 C 542,262 524,171 492,128 C 460,85 395,70 300,70 Z"
+          fill="none" stroke="#22d3ee" stroke-width="9" opacity="0.22" filter="url(#softGlow)"/>
+
+    <!-- 手柄主体 -->
+    <path d="M 300,70 C 205,70 140,85 108,128 C 76,171 58,262 82,312 C 104,358 158,368 192,330 C 215,306 220,290 240,282 L 360,282 C 380,290 385,306 408,330 C 442,368 496,358 518,312 C 542,262 524,171 492,128 C 460,85 395,70 300,70 Z"
+          fill="url(#padGrad)" stroke="#38bdf8" stroke-width="2.6" stroke-opacity="0.85"/>
+
+    <!-- 顶部高光 -->
+    <path d="M 300,86 C 216,86 156,99 128,136" fill="none" stroke="#7dd3fc" stroke-width="2.2" opacity="0.32" stroke-linecap="round"/>
+    <path d="M 300,86 C 384,86 444,99 472,136" fill="none" stroke="#7dd3fc" stroke-width="2.2" opacity="0.32" stroke-linecap="round"/>
+
+    <!-- 十字方向键 -->
+    <path d="M 153,136 L 177,136 L 177,168 L 209,168 L 209,192 L 177,192 L 177,224 L 153,224 L 153,192 L 121,192 L 121,168 L 153,168 Z"
+          fill="#141c3a" stroke="#22d3ee" stroke-width="2.6" stroke-linejoin="round" filter="url(#glow)"/>
+
+    <!-- ABXY 按键 -->
+    <circle cx="435" cy="138" r="19" fill="#141c3a" stroke="#a78bfa" stroke-width="2.6" filter="url(#glow)"/>
+    <circle cx="477" cy="180" r="19" fill="#141c3a" stroke="#f472b6" stroke-width="2.6" filter="url(#glow)"/>
+    <circle cx="435" cy="222" r="19" fill="#141c3a" stroke="#22d3ee" stroke-width="2.6" filter="url(#glow)"/>
+    <circle cx="393" cy="180" r="19" fill="#141c3a" stroke="#34d399" stroke-width="2.6" filter="url(#glow)"/>
+
+    <!-- 按键内部小点 -->
+    <circle cx="435" cy="138" r="4" fill="#a78bfa" opacity="0.85"/>
+    <circle cx="477" cy="180" r="4" fill="#f472b6" opacity="0.85"/>
+    <circle cx="435" cy="222" r="4" fill="#22d3ee" opacity="0.85"/>
+    <circle cx="393" cy="180" r="4" fill="#34d399" opacity="0.85"/>
+
+    <!-- 中央功能键 -->
+    <ellipse cx="272" cy="170" rx="15" ry="7" fill="#141c3a" stroke="#94a3b8" stroke-width="2" opacity="0.9"/>
+    <ellipse cx="330" cy="170" rx="15" ry="7" fill="#141c3a" stroke="#94a3b8" stroke-width="2" opacity="0.9"/>
+
+    <!-- 中央指示灯 -->
+    <circle cx="301" cy="238" r="4" fill="#22d3ee" opacity="0.9" filter="url(#glow)"/>
+  </g>
+
+  <!-- ===== 底部装饰分隔 ===== -->
+  <line x1="80" y1="978" x2="754" y2="978" stroke="url(#lineGrad)" stroke-width="1.2"/>
+  <rect x="410" y="972" width="14" height="14" fill="#0a0f1f" stroke="#22d3ee" stroke-width="1.5" transform="rotate(45 417 979)"/>
+
+  <!-- 底部装饰短线 -->
+  <g stroke="#22d3ee" stroke-width="2" stroke-linecap="round" opacity="0.6">
+    <line x1="100" y1="978" x2="140" y2="978"/>
+    <line x1="694" y1="978" x2="734" y2="978"/>
+  </g>
+
+  <!-- ===== 底部标识 ===== -->
+  <text x="80" y="1024" font-size="14" font-weight="600" letter-spacing="3" fill="#67e8f9">NOVABAY · 万象星核</text>
+  <text x="754" y="1024" text-anchor="end" font-size="13" letter-spacing="2.5" fill="#475569">NO.07-8341112</text>
+</svg>

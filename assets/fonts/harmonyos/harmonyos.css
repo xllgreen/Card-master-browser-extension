@@ -1,0 +1,8 @@
+/* HarmonyOS Sans SC */
+@font-face {
+  font-family: "HarmonyOS Sans SC";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./HarmonyOS_Sans_SC_Regular.ttf) format("truetype");
+}

@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 834 1112" width="834" height="1112">
+  <defs>
+    <!-- 背景渐变 -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0c10" />
+      <stop offset="50%" stop-color="#121620" />
+      <stop offset="100%" stop-color="#0a0c10" />
+    </linearGradient>
+
+    <!-- 卡牌边框渐变 -->
+    <linearGradient id="cardBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.8" />
+      <stop offset="30%" stop-color="#bc8cff" stop-opacity="0.6" />
+      <stop offset="70%" stop-color="#58a6ff" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#bc8cff" stop-opacity="0.4" />
+    </linearGradient>
+
+    <!-- 星核辉光 -->
+    <radialGradient id="starGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.8" />
+      <stop offset="25%" stop-color="#bc8cff" stop-opacity="0.4" />
+      <stop offset="60%" stop-color="#58a6ff" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#0a0c10" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- 中心核心渐变 -->
+    <radialGradient id="coreGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
+      <stop offset="20%" stop-color="#58a6ff" stop-opacity="1" />
+      <stop offset="70%" stop-color="#bc8cff" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#0a0c10" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- 网格图案 -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#30363d" stroke-width="0.5" opacity="0.3" />
+    </pattern>
+
+    <!-- 发光滤镜 -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="glowHeavy" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="834" height="1112" fill="url(#bgGrad)" />
+  <rect width="834" height="1112" fill="url(#grid)" />
+
+  <!-- 卡牌主体 -->
+  <rect x="25" y="25" width="784" height="1062" rx="20" fill="#161b22" stroke="url(#cardBorder)" stroke-width="2" filter="url(#glow)" />
+  <rect x="35" y="35" width="764" height="1042" rx="15" fill="none" stroke="#30363d" stroke-width="1" />
+
+  <!-- 顶部装饰角 -->
+  <path d="M 35 80 L 35 50 L 65 50" fill="none" stroke="#58a6ff" stroke-width="2" />
+  <path d="M 799 80 L 799 50 L 769 50" fill="none" stroke="#58a6ff" stroke-width="2" />
+  <path d="M 35 1030 L 35 1060 L 65 1060" fill="none" stroke="#bc8cff" stroke-width="2" />
+  <path d="M 799 1030 L 799 1060 L 769 1060" fill="none" stroke="#bc8cff" stroke-width="2" />
+
+  <!-- 标题区域 -->
+  <text x="417" y="175" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="76" font-weight="900" fill="#c9d1d9" letter-spacing="18" filter="url(#glow)">万象星核</text>
+  <text x="417" y="230" text-anchor="middle" font-family="'Courier New', monospace" font-size="28" font-weight="bold" fill="#58a6ff" letter-spacing="28" filter="url(#glow)">N O V A B A Y</text>
+
+  <line x1="150" y1="265" x2="684" y2="265" stroke="url(#cardBorder)" stroke-width="2" />
+  <circle cx="150" cy="265" r="4" fill="#58a6ff" filter="url(#glow)" />
+  <circle cx="684" cy="265" r="4" fill="#58a6ff" filter="url(#glow)" />
+
+  <!-- 星核视觉区域 -->
+  <g transform="translate(417, 600)">
+    <!-- 外层辉光 -->
+    <circle cx="0" cy="0" r="240" fill="url(#starGlow)" filter="url(#glowHeavy)" />
+
+    <!-- 轨道环 -->
+    <ellipse cx="0" cy="0" rx="260" ry="75" fill="none" stroke="#bc8cff" stroke-width="2" transform="rotate(30)" filter="url(#glow)" />
+    <ellipse cx="0" cy="0" rx="260" ry="75" fill="none" stroke="#58a6ff" stroke-width="2" transform="rotate(-30)" filter="url(#glow)" />
+    <ellipse cx="0" cy="0" rx="260" ry="75" fill="none" stroke="#58a6ff" stroke-width="1.5" transform="rotate(90)" filter="url(#glow)" opacity="0.7" />
+
+    <!-- 轨道数据节点 -->
+    <circle cx="260" cy="0" r="6" fill="#58a6ff" filter="url(#glow)" transform="rotate(30)" />
+    <circle cx="-260" cy="0" r="6" fill="#bc8cff" filter="url(#glow)" transform="rotate(30)" />
+    <circle cx="0" cy="75" r="4" fill="#bc8cff" filter="url(#glow)" transform="rotate(-30)" />
+    <circle cx="0" cy="-75" r="5" fill="#58a6ff" filter="url(#glow)" transform="rotate(90)" />
+
+    <!-- 8 角星形核心 -->
+    <polygon points="0,-175 33,-55 175,0 33,55 0,175 -33,55 -175,0 -33,-55" fill="#ffffff" opacity="0.1" filter="url(#glowHeavy)" />
+    <polygon points="0,-150 30,-45 150,0 30,45 0,150 -30,45 -150,0 -30,-45" fill="#161b22" stroke="#58a6ff" stroke-width="2" filter="url(#glow)" />
+    <polygon points="0,-110 22,-33 110,0 22,33 0,110 -22,33 -110,0 -22,-33" fill="#0d1117" stroke="#bc8cff" stroke-width="1.5" filter="url(#glow)" />
+
+    <!-- 中心核心 -->
+    <circle cx="0" cy="0" r="48" fill="url(#coreGrad)" filter="url(#glowHeavy)" />
+    <circle cx="0" cy="0" r="16" fill="#ffffff" filter="url(#glow)" />
+    <polygon points="0,-22 11,0 0,22 -11,0" fill="#58a6ff" filter="url(#glow)" />
+  </g>
+
+  <!-- 悬浮光点 -->
+  <circle cx="140" cy="420" r="2" fill="#58a6ff" opacity="0.6" filter="url(#glow)" />
+  <circle cx="690" cy="470" r="3" fill="#bc8cff" opacity="0.4" filter="url(#glow)" />
+  <circle cx="240" cy="760" r="2" fill="#58a6ff" opacity="0.7" filter="url(#glow)" />
+  <circle cx="610" cy="360" r="1.5" fill="#58a6ff" opacity="0.5" />
+  <circle cx="710" cy="800" r="2" fill="#bc8cff" opacity="0.6" filter="url(#glow)" />
+  <circle cx="130" cy="860" r="1.5" fill="#58a6ff" opacity="0.4" />
+
+  <!-- 底部居中的深色主题文字（无边框） -->
+  <g transform="translate(417, 980)">
+    <text x="0" y="9" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="bold" fill="#c9d1d9" filter="url(#glow)">深色主题</text>
+  </g>
+</svg>

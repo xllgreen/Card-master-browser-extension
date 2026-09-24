@@ -1,0 +1,220 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="834" height="1112" viewBox="0 0 834 1112">
+  <defs>
+    <!-- 背景 -->
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0.65" y2="1">
+      <stop offset="0%"   stop-color="#070a18"/>
+      <stop offset="42%"  stop-color="#0b1430"/>
+      <stop offset="78%"  stop-color="#110d2a"/>
+      <stop offset="100%" stop-color="#170a26"/>
+    </linearGradient>
+
+    <!-- 星云核心 -->
+    <radialGradient id="nebula" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%"   stop-color="#63f5ff" stop-opacity="0.42"/>
+      <stop offset="32%"  stop-color="#2a6fd6" stop-opacity="0.26"/>
+      <stop offset="66%"  stop-color="#8b2bd6" stop-opacity="0.13"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="coreGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%"   stop-color="#7ff4ff" stop-opacity="0.55"/>
+      <stop offset="45%"  stop-color="#2bb6d6" stop-opacity="0.20"/>
+      <stop offset="100%" stop-color="#0a0f22" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- 金 -->
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#fff6d2"/>
+      <stop offset="28%"  stop-color="#ffd77a"/>
+      <stop offset="62%"  stop-color="#e8a63a"/>
+      <stop offset="100%" stop-color="#9c6216"/>
+    </linearGradient>
+
+    <!-- 卡框彩色描边 -->
+    <linearGradient id="frameGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#ffd77a" stop-opacity="0.95"/>
+      <stop offset="30%"  stop-color="#7fe8ff" stop-opacity="0.55"/>
+      <stop offset="62%"  stop-color="#ffd77a" stop-opacity="0.80"/>
+      <stop offset="100%" stop-color="#ff5fd2" stop-opacity="0.65"/>
+    </linearGradient>
+
+    <!-- 两端淡出分隔线 -->
+    <linearGradient id="fadeLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#7fe8ff" stop-opacity="0"/>
+      <stop offset="50%"  stop-color="#7fe8ff" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#7fe8ff" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="fadeGold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#ffd77a" stop-opacity="0"/>
+      <stop offset="50%"  stop-color="#ffd77a" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#ffd77a" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- 滤镜 -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <filter id="softGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+
+    <filter id="starBlur" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="1.2"/>
+    </filter>
+
+    <clipPath id="cardClip">
+      <rect x="3" y="3" width="828" height="1106" rx="44"/>
+    </clipPath>
+  </defs>
+
+  <!-- ========== 卡面底色 ========== -->
+  <rect x="3" y="3" width="828" height="1106" rx="44" fill="url(#bgGrad)"/>
+
+  <g clip-path="url(#cardClip)">
+    <!-- 星空 -->
+    <g fill="#cfe9ff">
+      <circle cx="78"  cy="120" r="1.2" opacity=".85"/>
+      <circle cx="160" cy="72"  r="0.9" opacity=".55"/>
+      <circle cx="250" cy="140" r="1.4" opacity=".9"/>
+      <circle cx="330" cy="66"  r="1.0" opacity=".6"/>
+      <circle cx="420" cy="110" r="0.8" opacity=".45"/>
+      <circle cx="520" cy="84"  r="1.3" opacity=".8"/>
+      <circle cx="600" cy="150" r="0.9" opacity=".5"/>
+      <circle cx="690" cy="96"  r="1.1" opacity=".7"/>
+      <circle cx="762" cy="160" r="0.9" opacity=".55"/>
+      <circle cx="110" cy="220" r="0.9" opacity=".5"/>
+      <circle cx="200" cy="262" r="1.2" opacity=".7"/>
+      <circle cx="300" cy="200" r="0.8" opacity=".45"/>
+      <circle cx="646" cy="232" r="1.3" opacity=".75"/>
+      <circle cx="732" cy="272" r="0.9" opacity=".5"/>
+      <circle cx="86"  cy="330" r="1.1" opacity=".65"/>
+      <circle cx="152" cy="412" r="0.8" opacity=".4"/>
+      <circle cx="252" cy="352" r="1.0" opacity=".55"/>
+      <circle cx="580" cy="342" r="1.2" opacity=".7"/>
+      <circle cx="682" cy="402" r="0.9" opacity=".5"/>
+      <circle cx="772" cy="352" r="1.1" opacity=".6"/>
+      <circle cx="60"  cy="472" r="0.9" opacity=".45"/>
+      <circle cx="140" cy="542" r="1.3" opacity=".75"/>
+      <circle cx="240" cy="502" r="0.8" opacity=".4"/>
+      <circle cx="602" cy="492" r="1.0" opacity=".55"/>
+      <circle cx="702" cy="532" r="1.2" opacity=".65"/>
+      <circle cx="780" cy="472" r="0.9" opacity=".45"/>
+      <circle cx="92"  cy="622" r="1.1" opacity=".6"/>
+      <circle cx="192" cy="682" r="0.9" opacity=".45"/>
+      <circle cx="282" cy="642" r="1.3" opacity=".7"/>
+      <circle cx="562" cy="652" r="0.8" opacity=".4"/>
+      <circle cx="662" cy="702" r="1.0" opacity=".55"/>
+      <circle cx="752" cy="642" r="1.2" opacity=".65"/>
+      <circle cx="122" cy="762" r="0.9" opacity=".45"/>
+      <circle cx="222" cy="802" r="1.1" opacity=".6"/>
+      <circle cx="302" cy="742" r="0.8" opacity=".4"/>
+      <circle cx="622" cy="782" r="1.3" opacity=".7"/>
+      <circle cx="712" cy="822" r="0.9" opacity=".45"/>
+      <circle cx="82"  cy="882" r="1.0" opacity=".55"/>
+      <circle cx="172" cy="932" r="1.2" opacity=".65"/>
+      <circle cx="272" cy="882" r="0.8" opacity=".4"/>
+      <circle cx="582" cy="902" r="1.1" opacity=".6"/>
+      <circle cx="682" cy="952" r="0.9" opacity=".45"/>
+      <circle cx="772" cy="892" r="1.2" opacity=".6"/>
+      <circle cx="132" cy="1002" r="0.9" opacity=".45"/>
+      <circle cx="242" cy="1042" r="1.1" opacity=".55"/>
+      <circle cx="322" cy="982" r="0.8" opacity=".4"/>
+      <circle cx="562" cy="1022" r="1.3" opacity=".65"/>
+      <circle cx="662" cy="1062" r="0.9" opacity=".45"/>
+      <circle cx="742" cy="1002" r="1.0" opacity=".5"/>
+      <circle cx="402" cy="182" r="0.9" opacity=".5"/>
+      <circle cx="482" cy="252" r="1.1" opacity=".6"/>
+    </g>
+
+    <!-- 星云光晕 -->
+    <circle cx="417" cy="450" r="248" fill="url(#nebula)" opacity="0.55"/>
+    <circle cx="417" cy="450" r="118" fill="#2bb6d6" opacity="0.16" filter="url(#softGlow)"/>
+  </g>
+
+  <!-- ========== 卡框 ========== -->
+  <rect x="3" y="3" width="828" height="1106" rx="44" fill="none"
+        stroke="url(#frameGrad)" stroke-width="4"/>
+  <rect x="22" y="22" width="790" height="1068" rx="30" fill="none"
+        stroke="#7fe8ff" stroke-opacity="0.16" stroke-width="1.5"/>
+
+  <!-- ========== 仅保留的三行文字 ========== -->
+  <text x="417" y="86" text-anchor="middle"
+        font-family="'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif"
+        font-size="18" font-weight="500" letter-spacing="8"
+        fill="#7fe8ff" fill-opacity="0.8">NOVABAY · 万象星核</text>
+
+  <line x1="300" y1="106" x2="534" y2="106"
+        stroke="url(#fadeGold)" stroke-width="1.2"/>
+
+  <text x="417" y="172" text-anchor="middle"
+        font-family="'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif"
+        font-size="58" font-weight="800" letter-spacing="5"
+        fill="#ffffff" filter="url(#glow)">解除复制限制</text>
+
+  <text x="417" y="214" text-anchor="middle"
+        font-family="'Orbitron','Eurostile','Helvetica Neue',sans-serif"
+        font-size="23" font-weight="700" letter-spacing="13"
+        fill="url(#goldGrad)">COPYING LIFTED</text>
+
+  <!-- ========== 核心图形 ========== -->
+  <g>
+    <circle cx="417" cy="450" r="180" fill="none"
+            stroke="#5ff0ff" stroke-opacity="0.22" stroke-width="1.5"
+            stroke-dasharray="3 12"/>
+
+    <circle cx="417" cy="450" r="158" fill="none"
+            stroke="url(#goldGrad)" stroke-opacity="0.8" stroke-width="2"
+            stroke-dasharray="176 88" stroke-linecap="round"/>
+
+    <circle cx="417" cy="450" r="140" fill="none"
+            stroke="#ff5fd2" stroke-opacity="0.42" stroke-width="1.5"
+            stroke-dasharray="86 196" stroke-linecap="round"/>
+
+    <circle cx="417" cy="450" r="120" fill="none"
+            stroke="#7fe8ff" stroke-opacity="0.28" stroke-width="1"/>
+
+    <circle cx="417" cy="450" r="112" fill="url(#coreGlow)" opacity="0.9"/>
+
+    <circle cx="417" cy="292" r="4.5" fill="#ffd77a" opacity="0.95"/>
+    <circle cx="575" cy="450" r="3.5" fill="#5ff0ff" opacity="0.85"/>
+    <circle cx="417" cy="608" r="3.5" fill="#ff5fd2" opacity="0.75"/>
+    <circle cx="259" cy="450" r="3.5" fill="#5ff0ff" opacity="0.55"/>
+
+    <!-- 复制体（虚影） -->
+    <rect x="402" y="432" width="88" height="88" rx="18"
+          fill="#ffd77a" fill-opacity="0.06"
+          stroke="#ffd77a" stroke-opacity="0.85" stroke-width="2.5"
+          stroke-dasharray="9 7"/>
+    <circle cx="446" cy="476" r="17" fill="none"
+            stroke="#ffd77a" stroke-opacity="0.5" stroke-width="1.5"/>
+    <circle cx="446" cy="476" r="6.5" fill="#ffd77a" fill-opacity="0.95"/>
+
+    <!-- 原体 -->
+    <rect x="344" y="374" width="88" height="88" rx="18"
+          fill="#5ff0ff" fill-opacity="0.10"
+          stroke="#5ff0ff" stroke-width="3" filter="url(#glow)"/>
+    <path d="M388 394 L412 418 L388 442 L364 418 Z"
+          fill="none" stroke="#5ff0ff" stroke-width="2" stroke-opacity="0.95"/>
+
+    <!-- 复制流粒子 -->
+    <circle cx="406" cy="428" r="3.4" fill="#7fe8ff" opacity="0.95"/>
+    <circle cx="424" cy="446" r="2.4" fill="#7fe8ff" opacity="0.65"/>
+    <circle cx="440" cy="462" r="1.7" fill="#7fe8ff" opacity="0.4"/>
+
+    <!-- 四角星芒 -->
+    <path d="M417 274 l4.5 10.5 l10.5 4.5 l-10.5 4.5 l-4.5 10.5 l-4.5 -10.5 l-10.5 -4.5 l10.5 -4.5 z"
+          fill="#eaf9ff" opacity="0.85"/>
+    <path d="M417 606 l3.5 8 l8 3.5 l-8 3.5 l-3.5 8 l-3.5 -8 l-8 -3.5 l8 -3.5 z"
+          fill="#ffd77a" opacity="0.7"/>
+  </g>
+
+  <!-- 保留两条装饰分隔线（无文字） -->
+  <line x1="70" y1="672" x2="764" y2="672"
+        stroke="url(#fadeLine)" stroke-width="1.5"/>
+  <line x1="52" y1="996" x2="782" y2="996"
+        stroke="url(#fadeLine)" stroke-width="1" stroke-opacity="0.5"/>
+
+</svg>

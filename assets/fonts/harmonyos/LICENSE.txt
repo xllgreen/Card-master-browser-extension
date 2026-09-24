@@ -1,0 +1,4 @@
+HarmonyOS Sans Font
+
+HarmonyOS Sans is provided by Huawei Device Co., Ltd.
+Bundled with the NovaBay browser extension.

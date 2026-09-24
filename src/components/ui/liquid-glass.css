@@ -1,0 +1,1150 @@
+/* biome-ignore-all lint/complexity/noImportantStyles: The Liquid Glass layer is a deliberate override of the legacy framed skin. */
+
+/* ==========================================================================
+   Liquid Glass 材质层
+   统一的半透明"液态玻璃"外观：柔和磨砂、细发丝描边、克制高光、大圆角。
+   刻意不使用贴图、金属边框、光效与多余动效。
+   ========================================================================== */
+
+:is(:root, :host, .app-ui-theme) {
+  --lg-radius-sheet: 30px;
+  --lg-radius-panel: 22px;
+  --lg-radius-control: 14px;
+  --lg-radius-pill: 999px;
+  --lg-blur: 34px;
+  --lg-saturate: 180%;
+  --lg-blur-thin: 18px;
+  --lg-glass: color-mix(in srgb, var(--app-ui-surface) 62%, transparent);
+  --lg-glass-thick: color-mix(
+    in srgb,
+    var(--app-ui-surface-strong) 78%,
+    transparent
+  );
+  --lg-glass-thin: color-mix(in srgb, var(--app-ui-surface) 34%, transparent);
+  --lg-glass-inset: color-mix(in srgb, var(--app-ui-control) 72%, transparent);
+  --lg-glass-hover: color-mix(in srgb, var(--app-ui-hover) 66%, transparent);
+  --lg-glass-selected: color-mix(
+    in srgb,
+    var(--app-ui-selected) 72%,
+    transparent
+  );
+  --lg-hairline: inset 0 0 0 1px rgb(255 255 255 / 12%);
+  --lg-specular: inset 0 1px 0 rgb(255 255 255 / 20%);
+  --lg-lift: 0 26px 70px rgb(0 0 0 / 38%), 0 3px 12px rgb(0 0 0 / 24%);
+  --lg-lift-panel: 0 12px 32px rgb(0 0 0 / 26%);
+  --lg-lift-control: 0 2px 8px rgb(0 0 0 / 22%);
+  --lg-filter: blur(var(--lg-blur)) saturate(var(--lg-saturate));
+  --lg-filter-thin: blur(var(--lg-blur-thin)) saturate(var(--lg-saturate));
+}
+
+/* 动效收敛：只保留克制的淡入与位移，去掉弹跳缩放。 */
+:is(:root, :host) {
+  --app-motion-duration-quick: 150ms;
+  --app-motion-duration-fast: 250ms;
+  --app-motion-duration-medium: 350ms;
+  --app-motion-duration-reduced: 80ms;
+  --app-motion-ease-surface: cubic-bezier(0.22, 1, 0.36, 1);
+  --app-motion-ease-swap: ease;
+  --app-motion-ease-pop: cubic-bezier(0.22, 1, 0.36, 1);
+  --app-motion-distance-micro: 3px;
+  --app-motion-scale-modal: 1;
+  --app-motion-scale-dropdown: 1;
+  --app-motion-scale-dropdown-close: 1;
+}
+
+/* 清除贴图与金属边框：一律换成纯色玻璃。 */
+:is(
+  .page-target-frame,
+  .context-plaque__surface-layer,
+  .app-ui-workspace,
+  .app-ui-workspace__close,
+  .app-ui-framed-surface,
+  .app-ui-icon-button,
+  .app-ui-button,
+  .app-ui-notice,
+  .app-ui-badge,
+  .app-ui-field,
+  .app-ui-loader,
+  .card-status-notice,
+  .card-info-popover__title,
+  .card-info-popover__body,
+  .userscript-source-panel,
+  .userscript-source-panel__actions,
+  .manager-cover-generation-loader,
+  .manager-action-plate,
+  .gamepad-easter-egg__image-shell
+)::before,
+:is(
+  .page-target-frame,
+  .context-plaque__surface-layer,
+  .app-ui-workspace,
+  .app-ui-workspace__close,
+  .app-ui-framed-surface,
+  .app-ui-icon-button,
+  .app-ui-button,
+  .app-ui-notice,
+  .app-ui-badge,
+  .app-ui-field,
+  .app-ui-loader,
+  .card-status-notice,
+  .card-info-popover__title,
+  .card-info-popover__body,
+  .userscript-source-panel,
+  .userscript-source-panel__actions,
+  .manager-cover-generation-loader,
+  .manager-action-plate,
+  .gamepad-easter-egg__image-shell
+)::after,
+.app-ui-workspace::before,
+.app-ui-workspace::after {
+  background-image: none !important;
+}
+
+.app-ui-workspace,
+.app-ui-framed-surface,
+.app-ui-badge,
+.app-ui-workspace__close,
+.app-ui-button {
+  border-image-source: none !important;
+  border-image-slice: 100% !important;
+  border-image-width: 0 !important;
+  border-image-outset: 0 !important;
+  border-image-repeat: stretch !important;
+}
+
+/* --------------------------------------------------------------------------
+   面板与弹层：最外层负责真正的背景模糊，内层只使用半透明填充。
+   -------------------------------------------------------------------------- */
+
+.app-ui-dialog-layer {
+  background:
+    radial-gradient(circle at 50% 30%, rgb(255 255 255 / 6%), transparent 60%),
+    color-mix(in srgb, var(--app-ui-canvas) 62%, transparent);
+  backdrop-filter: var(--lg-filter-thin);
+}
+
+.app-ui-dialog {
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, rgb(255 255 255 / 9%), transparent),
+      transparent 42%
+    ),
+    var(--lg-glass-thick) !important;
+  border: 1px solid rgb(255 255 255 / 16%);
+  border-radius: var(--lg-radius-sheet);
+  box-shadow: var(--lg-specular), var(--lg-hairline), var(--lg-lift);
+  backdrop-filter: var(--lg-filter);
+  filter: none;
+}
+
+.app-ui-workspace {
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, rgb(255 255 255 / 8%), transparent),
+      transparent 34%
+    ),
+    var(--lg-glass-thick);
+  border: 1px solid rgb(255 255 255 / 16%);
+  border-radius: var(--lg-radius-sheet);
+  box-shadow: var(--lg-specular), var(--lg-hairline), var(--lg-lift);
+  backdrop-filter: var(--lg-filter);
+}
+
+.app-ui-workspace::before,
+.app-ui-workspace::after {
+  display: none;
+}
+
+.app-ui-workspace__header {
+  background: color-mix(in srgb, var(--app-ui-surface-strong) 46%, transparent);
+  border-bottom: 1px solid rgb(255 255 255 / 10%);
+}
+
+.app-ui-workspace__heading h1 {
+  color: var(--app-ui-ink);
+  text-shadow: none;
+}
+
+.app-ui-workspace__close {
+  background: color-mix(in srgb, var(--app-ui-control) 62%, transparent);
+  border: 1px solid rgb(255 255 255 / 16%);
+  border-radius: var(--lg-radius-pill);
+  box-shadow: var(--lg-hairline);
+  color: var(--app-ui-muted);
+}
+
+.app-ui-workspace__close:is(:hover, :focus-visible) {
+  background: var(--lg-glass-hover);
+  color: var(--app-ui-ink);
+  filter: none;
+}
+
+.app-ui-framed-surface {
+  --app-ui-framed-surface-top: color-mix(
+    in srgb,
+    var(--app-ui-surface) 52%,
+    transparent
+  );
+  --app-ui-framed-surface-bottom: color-mix(
+    in srgb,
+    var(--app-ui-surface-strong) 64%,
+    transparent
+  );
+  background-image: linear-gradient(
+    180deg,
+    var(--app-ui-framed-surface-top),
+    var(--app-ui-framed-surface-bottom)
+  );
+  border: 1px solid rgb(255 255 255 / 14%);
+  border-radius: var(--lg-radius-panel);
+  box-shadow: var(--lg-lift-panel);
+}
+
+.app-ui-badge {
+  color: var(--app-ui-user-accent);
+  border: 1px solid rgb(255 255 255 / 16%);
+  border-radius: var(--lg-radius-pill);
+  box-shadow: var(--lg-specular);
+}
+
+.card-info-popover {
+  color: var(--app-ui-ink);
+  border-radius: var(--lg-radius-panel);
+  box-shadow: var(--lg-lift);
+}
+
+.card-info-popover__title {
+  background-color: color-mix(
+    in srgb,
+    var(--app-ui-surface-strong) 70%,
+    transparent
+  );
+  border-bottom: 1px solid rgb(255 255 255 / 10%);
+  border-radius: var(--lg-radius-panel) var(--lg-radius-panel) 0 0;
+}
+
+.card-info-popover__body {
+  background-color: color-mix(in srgb, var(--app-ui-surface) 72%, transparent);
+  border-radius: 0 0 var(--lg-radius-panel) var(--lg-radius-panel);
+}
+
+/* --------------------------------------------------------------------------
+   控件层：玻璃胶囊按钮、圆角输入域、分段控件与开关。
+   -------------------------------------------------------------------------- */
+
+.app-ui-button {
+  min-height: 40px;
+  padding: 9px 20px;
+  color: var(--app-ui-ink);
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, rgb(255 255 255 / 12%), transparent),
+      transparent 55%
+    ),
+    color-mix(in srgb, var(--app-ui-surface-muted) 58%, transparent);
+  border: 1px solid rgb(255 255 255 / 16%);
+  border-radius: var(--lg-radius-pill);
+  box-shadow: var(--lg-lift-control);
+  backdrop-filter: var(--lg-filter-thin);
+  filter: none;
+}
+
+.app-ui-button.is-secondary {
+  --app-ui-button-color: var(--app-ui-muted);
+  background: color-mix(in srgb, var(--app-ui-surface) 34%, transparent);
+  filter: none;
+}
+
+.app-ui-button.is-primary {
+  --app-ui-button-color: var(--app-ui-on-accent);
+  color: var(--app-ui-on-accent);
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, rgb(255 255 255 / 26%), transparent),
+      transparent 58%
+    ),
+    linear-gradient(
+      180deg,
+      var(--app-ui-accent),
+      color-mix(in srgb, var(--app-ui-accent) 76%, black)
+    );
+  border-color: color-mix(in srgb, rgb(255 255 255 / 34%), transparent);
+  filter: none;
+}
+
+.app-ui-button.is-danger {
+  --app-ui-button-color: var(--app-ui-error);
+  color: var(--app-ui-error);
+  background: color-mix(in srgb, var(--app-ui-error) 16%, transparent);
+  border-color: color-mix(in srgb, var(--app-ui-error) 44%, transparent);
+  filter: none;
+}
+
+.app-ui-button:not(:disabled):hover {
+  background-color: var(--lg-glass-hover);
+  border-color: rgb(255 255 255 / 28%);
+  filter: brightness(1.08);
+}
+
+.app-ui-button:not(:disabled):active {
+  filter: brightness(0.94);
+}
+
+.app-ui-button:focus-visible {
+  outline: 0;
+  box-shadow:
+    0 0 0 3px color-mix(in srgb, var(--app-ui-accent) 38%, transparent),
+    var(--lg-lift-control);
+  filter: none;
+}
+
+.app-ui-button:disabled {
+  filter: none;
+}
+
+.app-ui-icon-button {
+  color: var(--app-ui-muted);
+  background: color-mix(in srgb, var(--app-ui-control) 46%, transparent);
+  border: 1px solid rgb(255 255 255 / 14%);
+  border-radius: var(--lg-radius-control);
+  box-shadow: var(--lg-specular);
+}
+
+.app-ui-icon-button::before {
+  display: none;
+}
+
+.app-ui-icon-button:not(:disabled):hover {
+  color: var(--app-ui-ink);
+  background: var(--lg-glass-hover);
+}
+
+.app-ui-icon-button:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 3px
+    color-mix(in srgb, var(--app-ui-accent) 38%, transparent);
+  filter: none;
+}
+
+.app-ui-icon-button.is-close {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.app-ui-field {
+  padding: 12px 14px;
+  background: var(--lg-glass);
+  border: 1px solid rgb(255 255 255 / 12%);
+  border-radius: var(--lg-radius-panel);
+  box-shadow: var(--lg-specular);
+}
+
+.app-ui-field::before {
+  display: none;
+}
+
+.app-ui-field :where(input, textarea, select),
+.app-ui-select {
+  padding: 10px 12px;
+  color: var(--app-ui-ink);
+  font:
+    500 14px / 1.5 var(--app-ui-font-body),
+    sans-serif;
+  background: var(--lg-glass-inset);
+  border: 1px solid rgb(255 255 255 / 12%);
+  border-radius: var(--lg-radius-control);
+  box-shadow: inset 0 1px 2px rgb(0 0 0 / 22%);
+}
+
+.app-ui-field :where(input, textarea, select):focus-visible,
+.app-ui-select:focus-visible {
+  border-color: color-mix(in srgb, var(--app-ui-accent) 70%, transparent);
+  box-shadow: 0 0 0 3px
+    color-mix(in srgb, var(--app-ui-accent) 26%, transparent);
+}
+
+.app-ui-field input[type="range"] {
+  accent-color: var(--app-ui-accent);
+}
+
+.app-ui-segmented-control {
+  background: var(--lg-glass-inset);
+  border: 1px solid rgb(255 255 255 / 12%);
+  border-radius: var(--lg-radius-pill);
+  box-shadow: inset 0 1px 2px rgb(0 0 0 / 20%);
+}
+
+.app-ui-segmented-control > label {
+  border-right: 1px solid rgb(255 255 255 / 8%);
+  border-radius: 0;
+}
+
+.app-ui-segmented-control > label:first-of-type {
+  border-start-start-radius: var(--lg-radius-pill);
+  border-end-start-radius: var(--lg-radius-pill);
+}
+
+.app-ui-segmented-control > label:last-of-type {
+  border-start-end-radius: var(--lg-radius-pill);
+  border-end-end-radius: var(--lg-radius-pill);
+}
+
+.app-ui-segmented-control > label.is-active {
+  color: var(--app-ui-ink);
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, rgb(255 255 255 / 16%), transparent),
+      transparent 60%
+    ),
+    color-mix(in srgb, var(--app-ui-selected) 82%, transparent);
+  box-shadow:
+    inset 0 0 0 1px rgb(255 255 255 / 16%),
+    0 2px 8px rgb(0 0 0 / 24%);
+}
+
+/* 开关 */
+.app-ui-toggle {
+  background: var(--lg-glass);
+  border: 1px solid rgb(255 255 255 / 12%);
+  border-radius: var(--lg-radius-panel);
+  box-shadow: var(--lg-specular);
+}
+
+.app-ui-toggle__control {
+  border: 1px solid rgb(255 255 255 / 14%);
+  border-radius: var(--lg-radius-pill);
+  box-shadow: inset 0 1px 3px rgb(0 0 0 / 28%);
+}
+
+.app-ui-toggle__control::after {
+  background: color-mix(in srgb, var(--app-ui-ink) 92%, transparent);
+  border-radius: var(--lg-radius-pill);
+  box-shadow: 0 2px 6px rgb(0 0 0 / 34%);
+}
+
+.app-ui-toggle:has(input:checked) .app-ui-toggle__control {
+  background: color-mix(in srgb, var(--app-ui-accent) 86%, transparent);
+  border-color: color-mix(in srgb, rgb(255 255 255 / 30%), transparent);
+}
+
+/* 提示条与加载遮罩 */
+.app-ui-notice,
+.card-status-notice {
+  background: var(--lg-glass);
+  border: 1px solid color-mix(in srgb, currentcolor 26%, transparent);
+  border-radius: var(--lg-radius-panel);
+  box-shadow: var(--lg-specular);
+}
+
+.app-ui-notice::before,
+.card-status-notice::before {
+  display: none;
+}
+
+.app-ui-loader {
+  background: var(--lg-glass-thin);
+  border: 1px solid rgb(255 255 255 / 14%);
+  border-radius: var(--lg-radius-pill);
+  backdrop-filter: var(--lg-filter-thin);
+}
+
+/* 页面目标取景框 */
+.page-target-frame::before {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   脚本舱面板：统一为玻璃卡片
+   -------------------------------------------------------------------------- */
+
+.userscript-deck:not(.host-extension) {
+  background: color-mix(in srgb, var(--app-ui-canvas) 72%, transparent);
+}
+
+.manager-shade {
+  background:
+    radial-gradient(
+      ellipse at 50% 42%,
+      color-mix(in srgb, rgb(255 255 255 / 5%), transparent),
+      transparent 62%
+    ),
+    color-mix(in srgb, var(--app-ui-canvas) 52%, transparent);
+  backdrop-filter: var(--lg-filter);
+}
+
+:is(
+  .manager-management-section,
+  .manager-update-panel,
+  .manager-rule-overrides label,
+  .manager-metadata-group,
+  .manager-system-control,
+  .manager-sync-history,
+  .manager-sync-conflicts,
+  .manager-sync-conflict,
+  .manager-model-selector,
+  .manager-reasoning-control,
+  .manager-blocking-summary,
+  .manager-detail-stage,
+  .manager-manifest dl,
+  .manager-manifest dl > div,
+  .manager-blocking-summary__item
+) {
+  background: var(--lg-glass);
+  border: 1px solid rgb(255 255 255 / 12%);
+  border-radius: var(--lg-radius-panel);
+  box-shadow: var(--lg-specular);
+}
+
+.manager-blocking-summary {
+  gap: 8px;
+}
+
+.manager-manifest dl {
+  gap: 6px;
+}
+
+.manager-manifest dl > div,
+.manager-blocking-summary__item {
+  border-radius: var(--lg-radius-control);
+}
+
+.manager-rule-overrides textarea {
+  background: var(--lg-glass-inset);
+  border: 1px solid rgb(255 255 255 / 12%);
+  border-radius: var(--lg-radius-control);
+}
+
+.manager-sync input,
+.manager-sync select {
+  background: var(--lg-glass-inset);
+  border: 1px solid rgb(255 255 255 / 12%);
+  border-radius: var(--lg-radius-control);
+}
+
+.manager-diagnostic__preview {
+  padding: 12px;
+  background: var(--lg-glass-inset);
+  border: 1px solid rgb(255 255 255 / 12%);
+  border-radius: var(--lg-radius-control);
+  box-shadow: var(--lg-specular);
+}
+
+.manager-sync-timeline {
+  padding: 14px;
+  background: var(--lg-glass);
+  border: 1px solid rgb(255 255 255 / 12%);
+  border-radius: var(--lg-radius-panel);
+  box-shadow: var(--lg-specular);
+}
+
+.manager-sync-timeline__item {
+  background: var(--lg-glass-inset);
+  border: 1px solid rgb(255 255 255 / 10%);
+}
+
+.manager-sync-timeline__tag {
+  border-color: rgb(255 255 255 / 18%);
+  box-shadow: var(--lg-specular);
+}
+
+.userscript-source-panel {
+  background: var(--lg-glass);
+  border: 1px solid rgb(255 255 255 / 12%);
+  border-radius: var(--lg-radius-panel);
+  box-shadow: var(--lg-specular);
+}
+
+.userscript-source-panel__actions .app-ui-button {
+  background: var(--lg-glass-inset);
+  border: 1px solid rgb(255 255 255 / 14%);
+  border-image-source: none !important;
+  border-image-slice: 100% !important;
+  border-radius: var(--lg-radius-control);
+  box-shadow: none;
+}
+
+.gamepad-easter-egg__image-shell::after {
+  background-image: none !important;
+  border-image-source: none !important;
+  border-image-slice: 100% !important;
+}
+
+/* --------------------------------------------------------------------------
+   装饰层隐藏：不再使用氛围光、充能光环、闪光与金属浮雕
+   -------------------------------------------------------------------------- */
+
+:is(
+  .manager-stage-atmosphere,
+  .manager-stage-light,
+  .manager-card-glow-effect,
+  .manager-card__charge-aura,
+  .manager-card__charge-ring,
+  .manager-card__charge-rays,
+  .manager-card__charge-flash,
+  .manager-card__action-frame,
+  .manager-card__action-frame::before,
+  .manager-card__action-frame > .manager-card__action-frame-image,
+  .manager-library-import-celebration,
+  .manager-library-import-celebration__glow,
+  .card-material__sparkles,
+  .card-material__edge,
+  .card-material__inset-frame,
+  .card-material__inset-frame::before,
+  .card-material__inset-frame::after,
+  .context-plaque__ornament,
+  .context-plaque__ornament--top,
+  .context-plaque__ornament--bottom,
+  .manager-action-plate::before
+) {
+  display: none !important;
+}
+
+/* 顶部说明牌：去掉雕花，改为悬浮玻璃条 */
+.context-plaque__surface-layer.is-neutral {
+  background: color-mix(in srgb, var(--app-ui-surface-strong) 68%, transparent);
+  border: 1px solid rgb(255 255 255 / 14%);
+  border-radius: var(--lg-radius-sheet);
+  box-shadow: var(--lg-specular), var(--lg-lift);
+  backdrop-filter: var(--lg-filter);
+  filter: none;
+  opacity: 1;
+}
+
+.context-plaque :where(.context-plaque__title) {
+  color: var(--app-ui-ink);
+  text-shadow: none;
+}
+
+.context-plaque__rule {
+  color: rgb(255 255 255 / 28%);
+}
+
+/* --------------------------------------------------------------------------
+   技能牌卡片：Liquid Glass 材质
+   大圆角 + 半透明玻璃 + 发丝内圈 + 顶部镜面高光；标题条是浮在卡面里的磨砂玻璃条，
+   状态标记改成安静的圆形胶囊，不再有金属切角、菱形标记与彩色外发光。
+   -------------------------------------------------------------------------- */
+
+:is(
+  :where(.manager-card, .manager-card-creation-preview__card),
+  .global-library-card__preview,
+  .install-card-motion
+) {
+  --manager-card-radius-x: 12%;
+  --manager-card-radius-y: 9%;
+  --manager-card-radius:
+    var(--manager-card-radius-x) / var(--manager-card-radius-y);
+}
+
+.manager-card__face {
+  background: var(--lg-glass);
+  box-shadow: var(--lg-specular), var(--lg-hairline), var(--lg-lift-panel);
+  transition:
+    box-shadow var(--app-motion-duration-quick) ease,
+    filter var(--app-motion-duration-quick) ease;
+}
+
+/* 玻璃罩层：压在最上面的高光与发丝边，不参与交互 */
+.manager-card__face::after {
+  position: absolute;
+  z-index: 6;
+  inset: 0;
+  content: "";
+  border-radius: inherit;
+  background: linear-gradient(
+    180deg,
+    rgb(255 255 255 / 15%),
+    rgb(255 255 255 / 3%) 32%,
+    transparent 58%
+  );
+  box-shadow:
+    inset 0 0 0 1px rgb(255 255 255 / 22%),
+    inset 0 1px 0 rgb(255 255 255 / 26%);
+  pointer-events: none;
+}
+
+.manager-card.is-dragging .manager-card__face {
+  box-shadow:
+    var(--lg-specular),
+    inset 0 0 0 1px rgb(255 255 255 / 28%),
+    var(--lg-lift);
+}
+
+.manager-card.is-focused .manager-card__face,
+.manager-card.is-enabled .manager-card__face,
+.manager-card.is-interacting .manager-card__face,
+.manager-card.is-casting .manager-card__face,
+.manager-card__face.is-forge,
+.manager-card.is-focused .manager-card__face.is-forge {
+  box-shadow:
+    var(--lg-specular),
+    inset 0 0 0 1px color-mix(in srgb, var(--app-ui-accent) 58%, transparent),
+    var(--lg-lift-panel);
+}
+
+.manager-card__face.is-enabled {
+  filter: none;
+}
+
+.manager-card.is-focused .manager-card__face.is-enabled {
+  filter: none;
+}
+
+/* 封面与占位：安静玻璃，不抢文案对比度 */
+.manager-card__cover {
+  background: color-mix(in srgb, var(--app-ui-surface-muted) 62%, transparent);
+}
+
+.manager-card__face.is-sleeping > .manager-card__cover {
+  filter: grayscale(0.44) saturate(0.72) brightness(0.7);
+}
+
+/* 标题条：浮在卡面底部的磨砂玻璃胶囊 */
+.manager-card__identity {
+  right: 6px;
+  bottom: 6px;
+  left: 6px;
+  width: auto;
+  padding: 8px 10px;
+  border-radius: var(--lg-radius-control);
+  background: color-mix(in srgb, var(--app-ui-canvas) 52%, transparent);
+  box-shadow:
+    inset 0 0 0 1px rgb(255 255 255 / 16%),
+    var(--lg-lift-control);
+  backdrop-filter: var(--lg-filter-thin);
+}
+
+/* 状态标记：中性磨砂胶囊 + 细发丝边 + 圆点 */
+.manager-card__state {
+  gap: 5px;
+  padding: 3px 9px 4px;
+  border-radius: var(--lg-radius-pill);
+  background: color-mix(in srgb, var(--app-ui-canvas) 58%, transparent);
+  box-shadow:
+    inset 0 0 0 1px var(--manager-card-state-border),
+    var(--lg-lift-control);
+  clip-path: none;
+  font-weight: 600;
+  backdrop-filter: var(--lg-filter-thin);
+}
+
+.manager-card__state::before {
+  display: none;
+}
+
+.manager-card__state i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--app-ui-success);
+  box-shadow: none;
+  rotate: none;
+}
+
+.manager-card__state.is-inactive i {
+  background: var(--app-ui-muted);
+}
+
+.manager-card__state.is-pending i {
+  background: var(--app-ui-warning);
+}
+
+.manager-card__state.is-error i {
+  background: var(--app-ui-error);
+}
+
+/* 入口计数徽标：统一使用 HarmonyOS Sans，不回退系统字体 */
+.manager-entry-count-badge {
+  font-family: var(--app-ui-font-body);
+}
+
+/* 动作提示板 */
+.manager-action-plate {
+  background: color-mix(in srgb, var(--app-ui-surface-strong) 72%, transparent);
+  border: 1px solid rgb(255 255 255 / 14%);
+  border-radius: var(--lg-radius-pill);
+  box-shadow: var(--lg-specular), var(--lg-lift-control);
+  backdrop-filter: var(--lg-filter-thin);
+}
+
+/* --------------------------------------------------------------------------
+   去辉光与常驻动效：扫描线、旋转符文、涟漪、呼吸脉冲与外发光全部移除
+   -------------------------------------------------------------------------- */
+
+:is(
+  .page-target-frame,
+  .page-target-frame::after,
+  .manager-card__forge-mark,
+  .manager-aim-line__core,
+  .manager-aim-line__origin,
+  .manager-action__activation-aura::before,
+  .manager-action__activation-aura::after,
+  .manager-action__badge::before
+) {
+  animation: none !important;
+}
+
+:is(.manager-card__forge-mark, .manager-action__activation-aura) {
+  display: none !important;
+}
+
+/* 页面目标取景框：安静的玻璃描边，不再呼吸与扫描 */
+.page-target-frame {
+  background: color-mix(
+    in srgb,
+    var(--app-ui-surface) 22%,
+    transparent
+  ) !important;
+  box-shadow:
+    inset 0 0 0 1px rgb(255 255 255 / 22%),
+    inset 0 1px 0 rgb(255 255 255 / 12%),
+    0 12px 32px rgb(0 0 0 / 26%) !important;
+}
+
+.page-target-frame::after {
+  background-image: none !important;
+}
+
+/* 危险动作取景框：保留可读的红色提示，去掉斜纹警示 */
+.page-target-frame--destructive {
+  background: color-mix(
+    in srgb,
+    var(--app-ui-error) 12%,
+    transparent
+  ) !important;
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--app-ui-error) 58%, transparent),
+    0 12px 32px rgb(0 0 0 / 26%) !important;
+}
+
+/* 外发光统一清除（保留必要的灰度与禁用效果） */
+:is(
+  .manager-deck-trigger:is(
+    .is-import-receiving,
+    .is-dragging,
+    .is-gamepad-pressing,
+    .is-ready:is(:hover, .is-gamepad-hovered)
+  ),
+  .manager-media-resources-trigger:is(
+    :hover,
+    :focus-visible,
+    .is-gamepad-hovered
+  ),
+  .manager-action::before,
+  .manager-action.is-hovered::before,
+  .manager-aim-line__origin,
+  #manager-aim-arrow path,
+  .global-library-search:focus-within,
+  .global-library-remove-dialog__content > svg,
+  .diagnostic-copy-button:is(:hover, :focus-visible),
+  .app-ui-icon-button.is-close:not(:disabled):hover > img,
+  .gamepad-response__curve,
+  .gamepad-response__handle:is(:hover, :focus-visible, .is-dragging),
+  .gamepad-test__artwork .button:is(.is-active, .is-stick-active, .is-tested),
+  .gamepad-test__artwork
+    :is(.axis-l-container, .axis-r-container):is(.is-active, .is-tested)
+) {
+  filter: none !important;
+}
+
+.manager-deck-trigger__logo {
+  filter: drop-shadow(0 2px 6px rgb(0 0 0 / 40%)) !important;
+}
+
+.manager-deck-trigger:is(:hover, :focus-visible, .is-gamepad-hovered) {
+  scale: 1 !important;
+}
+
+.app-ui-icon-button:not(:disabled):hover {
+  transform: none !important;
+}
+
+.global-library-search:focus-within {
+  box-shadow:
+    var(--lg-specular),
+    0 0 0 3px color-mix(in srgb, var(--app-ui-accent) 34%, transparent) !important;
+}
+
+/* 手柄模式焦点：玻璃描边取代金色光晕 */
+:host([data-card-master-input-modality="gamepad"])
+  :where(
+    .app-ui-icon-button,
+    .app-ui-button,
+    .app-ui-select,
+    .app-ui-field input,
+    .app-ui-field textarea,
+    .app-ui-field select,
+    .app-ui-segmented-control > label
+  ):focus,
+:root[data-card-master-input-modality="gamepad"]
+  :where(
+    .app-ui-icon-button,
+    .app-ui-button,
+    .app-ui-select,
+    .app-ui-field input,
+    .app-ui-field textarea,
+    .app-ui-field select,
+    .app-ui-segmented-control > label
+  ):focus {
+  filter: none !important;
+  outline: 2px solid color-mix(in srgb, var(--app-ui-accent) 58%, transparent) !important;
+  outline-offset: 2px !important;
+}
+
+/* --------------------------------------------------------------------------
+   文字与描边配色：金铜色统一换成中性墨色与蓝色强调
+   -------------------------------------------------------------------------- */
+
+:is(:root, :host, .app-ui-theme)
+  :where(
+    h1,
+    h2,
+    h3,
+    h4,
+    strong,
+    b,
+    p,
+    span,
+    label,
+    li,
+    dt,
+    dd,
+    i,
+    kbd,
+    button
+  ) {
+  text-shadow: none !important;
+}
+
+:is(
+  .userscript-deck,
+  .context-plaque,
+  .userscript-source-panel__header > strong,
+  .userscript-source-panel__expand:hover,
+  .manager-action-notice,
+  .manager-action-notice__copy strong,
+  .manager-deck-trigger,
+  .manager-media-speed-radial__plate,
+  .manager-media-speed-radial__copy,
+  .gamepad-control-panel,
+  .gamepad-control-close:is(:hover, :focus-visible),
+  .gamepad-control-notice,
+  .gamepad-speech-status,
+  .gamepad-test__clear:hover,
+  .gamepad-test__exit > b,
+  .gamepad-test__metric strong,
+  .gamepad-test__trigger strong,
+  .gamepad-test__metric.is-active,
+  .gamepad-test__trigger.is-active,
+  .gamepad-test__metric.is-active :is(strong, b),
+  .gamepad-test__trigger.is-active :is(strong, b),
+  .gamepad-response__presets button:is(:hover, :focus-visible) > span,
+  .gamepad-keyboard__key.is-selected,
+  .gamepad-keyboard__candidate.is-selected,
+  .install-card-identity strong,
+  .install-decision__title,
+  .install-focus-header,
+  .context-plaque__audio:hover
+) {
+  color: var(--app-ui-ink) !important;
+}
+
+:is(
+  .userscript-source-panel,
+  .manager-action-notice__copy span,
+  .context-plaque__stat,
+  .gamepad-control-close,
+  .gamepad-speech-status__label,
+  .gamepad-keyboard__candidate-more,
+  .gamepad-response__presets button > span
+) {
+  color: var(--app-ui-muted) !important;
+}
+
+:is(
+  .context-plaque__shortcuts kbd,
+  .gamepad-keyboard__speech.is-active,
+  .gamepad-keyboard__key.is-shift-active .gamepad-keyboard__symbol--shifted,
+  .gamepad-keyboard__candidate.is-active-candidate,
+  .gamepad-response__presets button.is-active > span
+) {
+  color: var(--app-ui-accent) !important;
+}
+
+.gamepad-control-action__count {
+  color: var(--app-ui-accent-hover) !important;
+}
+
+.manager-entry-count-badge {
+  background: var(--app-ui-accent) !important;
+  border-color: rgb(255 255 255 / 40%) !important;
+  color: #fff !important;
+}
+
+.gamepad-test__status > span.is-connected,
+.install-readiness.is-success {
+  color: var(--app-ui-success) !important;
+}
+
+.manager-card__state.is-pending {
+  color: var(--app-ui-warning) !important;
+}
+
+:is(
+  .manager-aim-line__core,
+  .manager-aim-line__origin,
+  .manager-aim-line.is-page-targeting .manager-aim-line__core,
+  .manager-aim-line.is-page-targeting .manager-aim-line__origin
+) {
+  stroke: var(--app-ui-accent) !important;
+}
+
+#manager-aim-arrow path,
+.manager-aim-line.is-page-targeting #manager-aim-arrow path {
+  fill: var(--app-ui-accent) !important;
+}
+
+.gamepad-response__curve,
+.gamepad-response__handle {
+  stroke: var(--app-ui-accent) !important;
+}
+
+.gamepad-response__handle:is(:hover, :focus-visible, .is-dragging) {
+  fill: var(--app-ui-accent) !important;
+  stroke: var(--app-ui-accent-hover) !important;
+}
+
+.gamepad-response__live {
+  fill: var(--app-ui-accent-hover) !important;
+  stroke: var(--app-ui-accent) !important;
+}
+
+/* --------------------------------------------------------------------------
+   主题令牌：把残留的"古铜金"默认色改写成玻璃蓝，卡牌自身的取色仍然生效
+   -------------------------------------------------------------------------- */
+
+:is(:root, :host, .app-ui-theme) {
+  --manager-gold: var(--app-ui-accent);
+  --manager-accent: var(--app-ui-accent);
+  --action-color: var(--app-ui-accent);
+}
+
+:is(
+  .userscript-deck,
+  .manager-card,
+  .manager-card-creation-preview__card,
+  .manager-action,
+  .manager-card__action-frame,
+  .manager-element-targeting-hint
+) {
+  --manager-gold: var(--app-ui-accent);
+  --manager-accent: var(--app-ui-accent);
+  --action-color: var(--app-ui-accent);
+}
+
+.manager-action--toggle,
+.manager-action--assistant {
+  --action-color: var(--app-ui-success);
+}
+
+.manager-action--library {
+  --action-color: var(--app-ui-info);
+}
+
+.manager-action--command,
+.manager-action--block {
+  --action-color: var(--app-ui-accent);
+}
+
+/* --------------------------------------------------------------------------
+   无障碍：跟随系统的"减少动效"偏好
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  :is(:root, :host, .app-ui-theme) {
+    --app-motion-duration-quick: 1ms;
+    --app-motion-duration-fast: 1ms;
+    --app-motion-duration-medium: 1ms;
+    --app-motion-duration-reduced: 1ms;
+  }
+
+  :is(:root, :host, .app-ui-theme) :where(*) {
+    scroll-behavior: auto !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   站点记忆清单：与其余面板同一套玻璃质感
+   -------------------------------------------------------------------------- */
+
+.manager-media-speed-sites {
+  background: var(--lg-glass);
+  border: 1px solid rgb(255 255 255 / 12%);
+  border-radius: var(--lg-radius-panel);
+  box-shadow: var(--lg-specular);
+}
+
+.manager-media-speed-sites-list li {
+  background: var(--lg-glass-inset);
+  border: 1px solid rgb(255 255 255 / 10%);
+  border-radius: var(--lg-radius-control);
+}
+
+.manager-media-speed-site-tag {
+  background: var(--lg-glass-thin);
+  border-radius: var(--lg-radius-pill);
+}
+
+/* --------------------------------------------------------------------------
+   牌库标签筛选：安静的玻璃胶囊，选中态用细描边而不是高饱和色块
+   -------------------------------------------------------------------------- */
+
+.global-library-tags {
+  margin: -6px 0 18px;
+}
+
+.global-library-tags__label {
+  color: var(--app-ui-subtle);
+  font: 600 12px / 1 var(--app-ui-font-body);
+  letter-spacing: 0;
+}
+
+.global-library-tag {
+  padding: 6px 13px;
+  color: var(--app-ui-ink);
+  font: 500 12px / 1 var(--app-ui-font-body);
+  background: var(--lg-glass-thin);
+  border: 0;
+  border-radius: var(--lg-radius-pill);
+  box-shadow: var(--lg-hairline);
+}
+
+.global-library-tag:hover {
+  background: var(--lg-glass-hover);
+  border-color: transparent;
+  box-shadow:
+    var(--lg-hairline),
+    inset 0 0 0 1px rgb(255 255 255 / 18%);
+}
+
+.global-library-tag span {
+  color: var(--app-ui-subtle);
+}
+
+.global-library-tag.is-active,
+.global-library-tag.is-active:hover {
+  color: var(--app-ui-on-accent);
+  background: var(--app-ui-accent);
+  box-shadow: var(--lg-specular), var(--lg-lift-control);
+}
+
+.global-library-tag.is-active span {
+  color: inherit;
+  opacity: 0.72;
+}

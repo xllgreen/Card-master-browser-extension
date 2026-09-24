@@ -1,0 +1,202 @@
+<svg width="834" height="1112" viewBox="0 0 834 1112" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <!-- 背景渐变 -->
+        <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#050814"/>
+            <stop offset="40%" stop-color="#0a0f24"/>
+            <stop offset="100%" stop-color="#140a28"/>
+        </linearGradient>
+
+        <!-- 霓虹青色渐变 -->
+        <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#00ffff"/>
+            <stop offset="100%" stop-color="#0088ff"/>
+        </linearGradient>
+
+        <!-- 霓虹品红渐变 -->
+        <linearGradient id="magentaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ff00ff"/>
+            <stop offset="100%" stop-color="#8800ff"/>
+        </linearGradient>
+
+        <!-- 标题渐变 -->
+        <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#00ffff"/>
+            <stop offset="50%" stop-color="#ffffff"/>
+            <stop offset="100%" stop-color="#ff00ff"/>
+        </linearGradient>
+
+        <!-- 发光滤镜 -->
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="8" result="blur"/>
+            <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+
+        <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="4" result="blur"/>
+            <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+
+        <!-- 科技网格图案 -->
+        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00ffff" stroke-width="0.5" opacity="0.08"/>
+        </pattern>
+
+        <!-- 六边形图案 -->
+        <pattern id="hex" width="60" height="103.92" patternUnits="userSpaceOnUse" patternTransform="scale(0.5)">
+            <path d="M 30 0 L 60 17.32 L 60 51.96 L 30 69.28 L 0 51.96 L 0 17.32 Z" fill="none" stroke="#ff00ff" stroke-width="1" opacity="0.05"/>
+        </pattern>
+    </defs>
+
+    <!-- 背景 -->
+    <rect width="834" height="1112" fill="url(#bgGrad)"/>
+    <rect width="834" height="1112" fill="url(#grid)"/>
+    <rect width="834" height="1112" fill="url(#hex)"/>
+
+    <!-- 卡牌外发光边框 -->
+    <rect x="20" y="20" width="794" height="1072" rx="30" fill="none" stroke="#00ffff" stroke-width="2" opacity="0.4" filter="url(#glow)"/>
+    
+    <!-- 卡牌主边框 -->
+    <rect x="25" y="25" width="784" height="1062" rx="25" fill="none" stroke="url(#cyanGrad)" stroke-width="4"/>
+    
+    <!-- 卡牌内边框 -->
+    <rect x="40" y="40" width="754" height="1032" rx="15" fill="none" stroke="url(#magentaGrad)" stroke-width="2" opacity="0.6" stroke-dasharray="15 8"/>
+
+    <!-- 角落科技装饰（左上） -->
+    <path d="M 40 80 L 40 40 L 80 40" fill="none" stroke="#00ffff" stroke-width="5" filter="url(#softGlow)"/>
+    <!-- 角落科技装饰（右上） -->
+    <path d="M 794 80 L 794 40 L 754 40" fill="none" stroke="#00ffff" stroke-width="5" filter="url(#softGlow)"/>
+    <!-- 角落科技装饰（左下） -->
+    <path d="M 40 1032 L 40 1072 L 80 1072" fill="none" stroke="#00ffff" stroke-width="5" filter="url(#softGlow)"/>
+    <!-- 角落科技装饰（右下） -->
+    <path d="M 794 1032 L 794 1072 L 754 1072" fill="none" stroke="#00ffff" stroke-width="5" filter="url(#softGlow)"/>
+
+    <!-- 标题区域 -->
+    <!-- 顶部装饰线 -->
+    <path d="M 120 80 L 714 80" stroke="url(#cyanGrad)" stroke-width="2" opacity="0.8"/>
+    <circle cx="120" cy="80" r="4" fill="#00ffff"/>
+    <circle cx="714" cy="80" r="4" fill="#00ffff"/>
+    
+    <!-- 主标题 -->
+    <text x="417" y="160" font-family="'Arial Black', 'Impact', sans-serif" font-size="68" font-weight="900" fill="url(#titleGrad)" text-anchor="middle" letter-spacing="6" filter="url(#softGlow)">MEDIA SPEED</text>
+    
+    <!-- 副标题 -->
+    <text x="417" y="215" font-family="'Microsoft YaHei', 'PingFang SC', sans-serif" font-size="28" font-weight="bold" fill="#00ffff" text-anchor="middle" letter-spacing="12" opacity="0.9">媒体播放速度</text>
+    
+    <!-- 标题下方装饰 -->
+    <path d="M 200 245 L 634 245" stroke="#ff00ff" stroke-width="2" opacity="0.6"/>
+    <circle cx="417" cy="245" r="6" fill="#00ffff" filter="url(#glow)"/>
+    <circle cx="417" cy="245" r="3" fill="#ffffff"/>
+
+    <!-- 中央视觉区域 -->
+    <!-- 外围光环 -->
+    <circle cx="417" cy="520" r="190" fill="none" stroke="#00ffff" stroke-width="2" opacity="0.2"/>
+    <circle cx="417" cy="520" r="170" fill="none" stroke="#ff00ff" stroke-width="1.5" stroke-dasharray="15 10" opacity="0.4" filter="url(#softGlow)"/>
+    <circle cx="417" cy="520" r="150" fill="none" stroke="#00ffff" stroke-width="1" stroke-dasharray="5 15" opacity="0.6"/>
+
+    <!-- 左侧声波 / 速度线 -->
+    <path d="M 100 520 Q 160 460 220 520 T 340 520" fill="none" stroke="#00ffff" stroke-width="4" filter="url(#softGlow)"/>
+    <path d="M 120 540 Q 180 600 240 540 T 360 540" fill="none" stroke="#ff00ff" stroke-width="2" opacity="0.7"/>
+    <path d="M 80 500 L 180 500" stroke="#00ffff" stroke-width="2" opacity="0.5"/>
+    <path d="M 140 560 L 220 560" stroke="#ff00ff" stroke-width="2" opacity="0.5"/>
+
+    <!-- 右侧声波 / 速度线 -->
+    <path d="M 734 520 Q 674 580 614 520 T 494 520" fill="none" stroke="#ff00ff" stroke-width="4" filter="url(#softGlow)"/>
+    <path d="M 714 540 Q 654 480 594 540 T 474 540" fill="none" stroke="#00ffff" stroke-width="2" opacity="0.7"/>
+    <path d="M 754 500 L 654 500" stroke="#ff00ff" stroke-width="2" opacity="0.5"/>
+    <path d="M 694 560 L 614 560" stroke="#00ffff" stroke-width="2" opacity="0.5"/>
+
+    <!-- 中央播放按钮背景 -->
+    <circle cx="417" cy="520" r="110" fill="rgba(0, 255, 255, 0.05)" stroke="#00ffff" stroke-width="3" filter="url(#glow)"/>
+    
+    <!-- 播放按钮 -->
+    <polygon points="380,460 380,580 500,520" fill="url(#cyanGrad)" filter="url(#glow)"/>
+    <polygon points="385,465 385,575 495,520" fill="#ffffff" opacity="0.4"/>
+
+    <!-- 播放按钮周围科技装饰 -->
+    <path d="M 417 410 L 427 420 L 417 430 L 407 420 Z" fill="#ff00ff" filter="url(#softGlow)"/>
+    <path d="M 417 610 L 427 620 L 417 630 L 407 620 Z" fill="#ff00ff" filter="url(#softGlow)"/>
+    <path d="M 307 520 L 317 510 L 327 520 L 317 530 Z" fill="#00ffff" filter="url(#softGlow)"/>
+    <path d="M 507 520 L 517 510 L 527 520 L 517 530 Z" fill="#00ffff" filter="url(#softGlow)"/>
+
+    <!-- 悬浮科技节点 -->
+    <circle cx="180" cy="350" r="5" fill="#00ffff" filter="url(#glow)"/>
+    <circle cx="654" cy="380" r="8" fill="#ff00ff" filter="url(#glow)"/>
+    <circle cx="200" cy="700" r="6" fill="#ff00ff" filter="url(#glow)"/>
+    <circle cx="634" cy="680" r="4" fill="#00ffff" filter="url(#glow)"/>
+    
+    <!-- 连接节点的小线条 -->
+    <path d="M 180 350 L 220 400" stroke="#00ffff" stroke-width="1" opacity="0.5"/>
+    <path d="M 654 380 L 614 420" stroke="#ff00ff" stroke-width="1" opacity="0.5"/>
+    <path d="M 200 700 L 240 650" stroke="#ff00ff" stroke-width="1" opacity="0.5"/>
+    <path d="M 634 680 L 594 640" stroke="#00ffff" stroke-width="1" opacity="0.5"/>
+
+    <!-- ===== 底部填充区域 ===== -->
+    
+    <!-- 底部中央大光环装饰 -->
+    <circle cx="417" cy="860" r="100" fill="none" stroke="#00ffff" stroke-width="1" opacity="0.15" stroke-dasharray="8 6"/>
+    <circle cx="417" cy="860" r="70" fill="none" stroke="#ff00ff" stroke-width="1" opacity="0.2" stroke-dasharray="4 8"/>
+    <circle cx="417" cy="860" r="40" fill="none" stroke="#00ffff" stroke-width="1.5" opacity="0.3" filter="url(#softGlow)"/>
+    <circle cx="417" cy="860" r="8" fill="#00ffff" opacity="0.6" filter="url(#glow)"/>
+
+    <!-- 左侧数据流线 -->
+    <path d="M 80 780 L 180 780 L 200 800 L 200 840 L 180 860 L 100 860" fill="none" stroke="#00ffff" stroke-width="1.5" opacity="0.3"/>
+    <path d="M 80 800 L 160 800 L 175 815 L 175 835 L 160 850 L 80 850" fill="none" stroke="#ff00ff" stroke-width="1" opacity="0.25"/>
+    <circle cx="200" cy="800" r="3" fill="#00ffff" opacity="0.5"/>
+    <circle cx="200" cy="840" r="3" fill="#00ffff" opacity="0.5"/>
+    <circle cx="175" cy="815" r="2.5" fill="#ff00ff" opacity="0.4"/>
+    <circle cx="175" cy="835" r="2.5" fill="#ff00ff" opacity="0.4"/>
+
+    <!-- 右侧数据流线 -->
+    <path d="M 754 780 L 654 780 L 634 800 L 634 840 L 654 860 L 734 860" fill="none" stroke="#ff00ff" stroke-width="1.5" opacity="0.3"/>
+    <path d="M 754 800 L 674 800 L 659 815 L 659 835 L 674 850 L 754 850" fill="none" stroke="#00ffff" stroke-width="1" opacity="0.25"/>
+    <circle cx="634" cy="800" r="3" fill="#ff00ff" opacity="0.5"/>
+    <circle cx="634" cy="840" r="3" fill="#ff00ff" opacity="0.5"/>
+    <circle cx="659" cy="815" r="2.5" fill="#00ffff" opacity="0.4"/>
+    <circle cx="659" cy="835" r="2.5" fill="#00ffff" opacity="0.4"/>
+
+    <!-- 底部横向科技装饰线 -->
+    <line x1="120" y1="910" x2="300" y2="910" stroke="#00ffff" stroke-width="1.5" opacity="0.35"/>
+    <line x1="534" y1="910" x2="714" y2="910" stroke="#ff00ff" stroke-width="1.5" opacity="0.35"/>
+    <circle cx="120" cy="910" r="3" fill="#00ffff" opacity="0.5"/>
+    <circle cx="300" cy="910" r="3" fill="#00ffff" opacity="0.5"/>
+    <circle cx="534" cy="910" r="3" fill="#ff00ff" opacity="0.5"/>
+    <circle cx="714" cy="910" r="3" fill="#ff00ff" opacity="0.5"/>
+
+    <!-- 底部中央小型装饰节点 -->
+    <path d="M 380 910 L 400 890 L 434 890 L 454 910 L 434 930 L 400 930 Z" fill="none" stroke="#00ffff" stroke-width="1" opacity="0.3"/>
+    <circle cx="417" cy="910" r="5" fill="#ff00ff" opacity="0.5" filter="url(#softGlow)"/>
+
+    <!-- 底部两侧科技小节点 -->
+    <rect x="130" y="950" width="60" height="3" rx="1.5" fill="#00ffff" opacity="0.3"/>
+    <rect x="140" y="960" width="40" height="3" rx="1.5" fill="#00ffff" opacity="0.2"/>
+    <rect x="644" y="950" width="60" height="3" rx="1.5" fill="#ff00ff" opacity="0.3"/>
+    <rect x="654" y="960" width="40" height="3" rx="1.5" fill="#ff00ff" opacity="0.2"/>
+
+    <!-- 底部斜向装饰线 -->
+    <line x1="80" y1="1000" x2="200" y2="1000" stroke="#00ffff" stroke-width="1" opacity="0.15"/>
+    <line x1="634" y1="1000" x2="754" y2="1000" stroke="#ff00ff" stroke-width="1" opacity="0.15"/>
+
+    <!-- 底部小六边形装饰 -->
+    <path d="M 417 980 L 427 985 L 427 995 L 417 1000 L 407 995 L 407 985 Z" fill="none" stroke="#00ffff" stroke-width="1" opacity="0.25"/>
+    <path d="M 417 1000 L 427 1005 L 427 1015 L 417 1020 L 407 1015 L 407 1005 Z" fill="none" stroke="#ff00ff" stroke-width="1" opacity="0.2"/>
+
+    <!-- 底部编号 / 稀有度 -->
+    <text x="100" y="1050" font-family="'Arial Black', sans-serif" font-size="14" fill="#ff00ff" text-anchor="start" opacity="0.8">#NB-042</text>
+    <text x="734" y="1050" font-family="'Arial Black', sans-serif" font-size="14" fill="#00ffff" text-anchor="end" opacity="0.8">★★★★★</text>
+
+    <!-- 底部品牌标识 -->
+    <text x="417" y="1080" font-family="'Arial Black', 'Microsoft YaHei', sans-serif" font-size="22" font-weight="bold" fill="url(#titleGrad)" text-anchor="middle" letter-spacing="8" filter="url(#softGlow)">万象星核 NOVABAY</text>
+
+    <!-- 扫描线效果（覆盖层） -->
+    <line x1="40" y1="280" x2="794" y2="280" stroke="#00ffff" stroke-width="1" opacity="0.1"/>
+    <line x1="40" y1="400" x2="794" y2="400" stroke="#ff00ff" stroke-width="1" opacity="0.1"/>
+    <line x1="40" y1="760" x2="794" y2="760" stroke="#00ffff" stroke-width="1" opacity="0.1"/>
+</svg>

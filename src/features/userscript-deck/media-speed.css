@@ -1,0 +1,118 @@
+.manager-media-speed-intro {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  color: var(--app-ui-ink);
+  background: var(--app-ui-surface);
+  border: 1px solid var(--app-ui-border);
+}
+
+.manager-media-speed-intro strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--app-ui-accent);
+}
+
+.manager-media-speed-intro p {
+  margin: 0;
+  color: var(--app-ui-muted);
+  line-height: 1.55;
+}
+
+.manager-media-speed-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.manager-media-speed-wheel-editor textarea {
+  min-height: 178px;
+  resize: vertical;
+  tab-size: 2;
+}
+
+.manager-media-speed-sites {
+  display: grid;
+  gap: 10px;
+  padding: 14px 16px;
+  color: var(--app-ui-ink);
+}
+
+.manager-media-speed-sites-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.manager-media-speed-sites-head strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--app-ui-accent);
+}
+
+.manager-media-speed-sites-head p {
+  margin: 0;
+  color: var(--app-ui-muted);
+  line-height: 1.55;
+}
+
+.manager-media-speed-sites-empty {
+  margin: 0;
+  color: var(--app-ui-subtle);
+  line-height: 1.55;
+}
+
+.manager-media-speed-sites-list {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.manager-media-speed-sites-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+}
+
+.manager-media-speed-site-host {
+  flex: 1 1 160px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-family: var(--app-ui-font-mono);
+  font-size: 0.92em;
+}
+
+.manager-media-speed-site-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-inline-end: auto;
+}
+
+.manager-media-speed-site-tag {
+  padding: 2px 10px;
+  color: var(--app-ui-muted);
+  font-style: normal;
+  font-size: 0.86em;
+  line-height: 1.7;
+  white-space: nowrap;
+}
+
+.manager-media-speed-site-tag.is-inactive {
+  color: var(--app-ui-disabled);
+}
+
+.manager-media-speed-site-tag.is-off {
+  color: var(--app-ui-warning);
+}
+
+.manager-media-speed-site-tag.is-locked {
+  color: var(--app-ui-info);
+}

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="834" height="1112" viewBox="0 0 834 1112">
+  <defs>
+    <pattern id="starPattern" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="0.8" fill="#8b0000" opacity="0.25"/>
+      <circle cx="50" cy="30" r="0.5" fill="#8b0000" opacity="0.15"/>
+      <circle cx="30" cy="60" r="0.7" fill="#8b0000" opacity="0.2"/>
+      <circle cx="70" cy="70" r="0.6" fill="#8b0000" opacity="0.15"/>
+    </pattern>
+  </defs>
+
+  <rect width="834" height="1112" fill="#f5f0e6"/>
+  <rect width="834" height="1112" fill="url(#starPattern)"/>
+  
+  <rect x="20" y="20" width="794" height="1072" rx="15" fill="none" stroke="#0a0a0a" stroke-width="3"/>
+  <rect x="30" y="30" width="774" height="1052" rx="10" fill="none" stroke="#8b0000" stroke-width="1"/>
+  
+  <path d="M 45 45 L 85 45 M 45 45 L 45 85" stroke="#8b0000" stroke-width="1.5" fill="none"/>
+  <circle cx="45" cy="45" r="3" fill="#8b0000"/>
+  <path d="M 789 45 L 749 45 M 789 45 L 789 85" stroke="#8b0000" stroke-width="1.5" fill="none"/>
+  <circle cx="789" cy="45" r="3" fill="#8b0000"/>
+  <path d="M 45 1067 L 85 1067 M 45 1067 L 45 1027" stroke="#8b0000" stroke-width="1.5" fill="none"/>
+  <circle cx="45" cy="1067" r="3" fill="#8b0000"/>
+  <path d="M 789 1067 L 749 1067 M 789 1067 L 789 1027" stroke="#8b0000" stroke-width="1.5" fill="none"/>
+  <circle cx="789" cy="1067" r="3" fill="#8b0000"/>
+  
+  <text x="417" y="130" font-family="Noto Serif SC, Songti SC, SimSun, serif" font-size="52" font-weight="700" fill="#0a0a0a" text-anchor="middle" letter-spacing="10">湮灭星核</text>
+  <text x="417" y="172" font-family="Noto Serif SC, Songti SC, SimSun, serif" font-size="16" fill="#8b0000" text-anchor="middle" letter-spacing="6">NOVABAY · 虚空阵营</text>
+  
+  <line x1="180" y1="205" x2="360" y2="205" stroke="#8b0000" stroke-width="1"/>
+  <line x1="474" y1="205" x2="654" y2="205" stroke="#8b0000" stroke-width="1"/>
+  <rect x="407" y="195" width="20" height="20" fill="none" stroke="#8b0000" stroke-width="1" transform="rotate(45 417 205)"/>
+  
+  <g transform="translate(0,20)">
+    <circle cx="417" cy="560" r="150" fill="none" stroke="#0a0a0a" stroke-width="1.5"/>
+    <circle cx="417" cy="560" r="135" fill="none" stroke="#8b0000" stroke-width="1"/>
+    <circle cx="417" cy="560" r="120" fill="none" stroke="#0a0a0a" stroke-width="1"/>
+    <circle cx="417" cy="560" r="105" fill="none" stroke="#8b0000" stroke-width="1"/>
+    <circle cx="417" cy="560" r="90" fill="none" stroke="#0a0a0a" stroke-width="1.5"/>
+    <circle cx="417" cy="560" r="70" fill="none" stroke="#8b0000" stroke-width="1"/>
+    <circle cx="417" cy="560" r="50" fill="none" stroke="#0a0a0a" stroke-width="2"/>
+    
+    <circle cx="417" cy="560" r="35" fill="#0a0a0a"/>
+    <circle cx="417" cy="560" r="15" fill="#8b0000"/>
+    <circle cx="417" cy="560" r="5" fill="#f5f0e6"/>
+    
+    <path d="M 417 410 L 417 450 M 417 670 L 417 710 M 267 560 L 317 560 M 517 560 L 567 560" stroke="#0a0a0a" stroke-width="2"/>
+    <path d="M 311 454 L 345 488 M 523 454 L 489 488 M 311 666 L 345 632 M 523 666 L 489 632" stroke="#8b0000" stroke-width="1.5"/>
+  </g>
+  
+  <line x1="300" y1="1020" x2="534" y2="1020" stroke="#8b0000" stroke-width="1"/>
+  <text x="417" y="1060" font-family="Noto Serif SC, Songti SC, SimSun, serif" font-size="16" fill="#0a0a0a" text-anchor="middle" letter-spacing="4">NOVABAY-006</text>
+</svg>

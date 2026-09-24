@@ -1,0 +1,222 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="834" height="1112" viewBox="0 0 834 1112" font-family="'PingFang SC','Microsoft YaHei','Helvetica Neue',Arial,sans-serif">
+  <defs>
+    <!-- 背景渐变 -->
+    <linearGradient id="bg" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0%" stop-color="#060A1C"/>
+      <stop offset="45%" stop-color="#0C1330"/>
+      <stop offset="100%" stop-color="#04060E"/>
+    </linearGradient>
+
+    <!-- 星核光晕 -->
+    <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7FE9FF" stop-opacity="0.50"/>
+      <stop offset="30%" stop-color="#1E9CFF" stop-opacity="0.20"/>
+      <stop offset="65%" stop-color="#5B2BFF" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- 六边形填充 -->
+    <linearGradient id="hexFill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0D2E4A"/>
+      <stop offset="50%" stop-color="#14496B"/>
+      <stop offset="100%" stop-color="#091D34"/>
+    </linearGradient>
+
+    <!-- 六边形描边 -->
+    <linearGradient id="hexStroke" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7FF0FF"/>
+      <stop offset="50%" stop-color="#2FA8FF"/>
+      <stop offset="100%" stop-color="#A46BFF"/>
+    </linearGradient>
+
+    <!-- 分隔线渐变 -->
+    <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3BE8FF" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#3BE8FF" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#A46BFF" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- 标题渐变 -->
+    <linearGradient id="titleGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8FF3FF"/>
+      <stop offset="45%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#B98CFF"/>
+    </linearGradient>
+
+    <!-- 星点纹理 -->
+    <pattern id="stars" width="140" height="140" patternUnits="userSpaceOnUse">
+      <circle cx="12" cy="24" r="1.3" fill="#BFE9FF" opacity="0.75"/>
+      <circle cx="78" cy="10" r="0.9" fill="#FFFFFF" opacity="0.50"/>
+      <circle cx="120" cy="60" r="1.1" fill="#9FD8FF" opacity="0.60"/>
+      <circle cx="40" cy="88" r="0.8" fill="#FFFFFF" opacity="0.45"/>
+      <circle cx="98" cy="120" r="1.4" fill="#CFEBFF" opacity="0.70"/>
+      <circle cx="20" cy="126" r="0.9" fill="#FFFFFF" opacity="0.40"/>
+      <circle cx="66" cy="62" r="0.7" fill="#FFFFFF" opacity="0.35"/>
+      <circle cx="132" cy="104" r="0.8" fill="#A8DCFF" opacity="0.50"/>
+    </pattern>
+
+    <!-- 网格纹理 -->
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M42 0 L0 0 L0 42" fill="none" stroke="#1E4A70" stroke-width="0.6"/>
+    </pattern>
+
+    <!-- 发光滤镜 -->
+    <filter id="glow" x="-70%" y="-70%" width="240%" height="240%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- 柔光滤镜 -->
+    <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <!-- ===================== 背景 ===================== -->
+  <rect width="834" height="1112" fill="url(#bg)"/>
+  <rect width="834" height="1112" fill="url(#grid)" opacity="0.35"/>
+  <rect width="834" height="1112" fill="url(#stars)" opacity="0.9"/>
+
+  <!-- 星云光斑 -->
+  <ellipse cx="140" cy="220" rx="300" ry="220" fill="#1E5BFF" opacity="0.10" filter="url(#softGlow)"/>
+  <ellipse cx="710" cy="940" rx="280" ry="240" fill="#7B2BFF" opacity="0.10" filter="url(#softGlow)"/>
+
+  <!-- ===================== 卡牌外框 ===================== -->
+  <rect x="18" y="18" width="798" height="1076" rx="30" fill="none" stroke="#2C5A80" stroke-width="1.5" opacity="0.70"/>
+  <rect x="30" y="30" width="774" height="1052" rx="22" fill="none" stroke="#3BE8FF" stroke-width="1" opacity="0.22"/>
+
+  <!-- 四角装饰 -->
+  <path d="M46 100 L46 46 L100 46" fill="none" stroke="#3BE8FF" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
+  <path d="M734 46 L788 46 L788 100" fill="none" stroke="#3BE8FF" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
+  <path d="M46 1012 L46 1066 L100 1066" fill="none" stroke="#3BE8FF" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+  <path d="M734 1066 L788 1066 L788 1012" fill="none" stroke="#3BE8FF" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+
+  <!-- ===================== 顶部信息栏 ===================== -->
+  <g>
+    <path d="M80 88 L92 100 L80 112 L68 100 Z" fill="none" stroke="#3BE8FF" stroke-width="2"/>
+    <circle cx="80" cy="100" r="4" fill="#3BE8FF"/>
+    <text x="106" y="96" font-size="19" font-weight="600" fill="#CFEBFF" letter-spacing="3">万象星核</text>
+    <text x="108" y="118" font-size="11" font-weight="500" fill="#5B8BB5" letter-spacing="5">NOVABAY</text>
+
+    <text x="764" y="96" font-size="15" font-weight="600" fill="#5B8BB5" letter-spacing="2" text-anchor="end">NO. NB-0714</text>
+    <text x="764" y="118" font-size="11" font-weight="500" fill="#3D6E96" letter-spacing="3" text-anchor="end">SYSTEM / 系统协议</text>
+  </g>
+
+  <line x1="70" y1="140" x2="764" y2="140" stroke="url(#lineGrad)" stroke-width="1.5"/>
+
+  <!-- ===================== 主视觉：星核 ===================== -->
+  <g>
+    <!-- 光晕 -->
+    <circle cx="417" cy="430" r="250" fill="url(#coreGlow)"/>
+
+    <!-- 外层淡环 -->
+    <circle cx="417" cy="430" r="215" fill="none" stroke="#7B4DFF" stroke-width="1" opacity="0.25"/>
+
+    <!-- 虚线轨道 -->
+    <circle cx="417" cy="430" r="185" fill="none" stroke="#2FA8FF" stroke-width="1.2" stroke-dasharray="4 10" opacity="0.55"/>
+
+    <!-- 旋转弧段 1 -->
+    <circle cx="417" cy="430" r="200" fill="none" stroke="#3BE8FF" stroke-width="2.5" stroke-dasharray="150 1106" stroke-linecap="round" opacity="0.85">
+      <animateTransform attributeName="transform" type="rotate" from="0 417 430" to="360 417 430" dur="42s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- 旋转弧段 2（反向） -->
+    <circle cx="417" cy="430" r="200" fill="none" stroke="#A46BFF" stroke-width="2" stroke-dasharray="90 1166" stroke-linecap="round" opacity="0.65">
+      <animateTransform attributeName="transform" type="rotate" from="360 417 430" to="0 417 430" dur="56s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- 中心到节点的连接线 -->
+    <g stroke="#3BE8FF" stroke-width="1" stroke-dasharray="5 7" opacity="0.35">
+      <line x1="417" y1="430" x2="417" y2="245"/>
+      <line x1="417" y1="430" x2="577.2" y2="337.5"/>
+      <line x1="417" y1="430" x2="577.2" y2="522.5"/>
+      <line x1="417" y1="430" x2="417" y2="615"/>
+      <line x1="417" y1="430" x2="256.8" y2="522.5"/>
+      <line x1="417" y1="430" x2="256.8" y2="337.5"/>
+    </g>
+
+    <!-- 六个环绕节点 -->
+    <g>
+      <circle cx="417" cy="245" r="17" fill="#0A2038" stroke="#3BE8FF" stroke-width="1.5">
+        <animate attributeName="opacity" values="0.55;1;0.55" dur="3.2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="417" cy="245" r="5" fill="#7FE9FF"/>
+
+      <circle cx="577.2" cy="337.5" r="17" fill="#0A2038" stroke="#3BE8FF" stroke-width="1.5">
+        <animate attributeName="opacity" values="0.55;1;0.55" dur="3.8s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="577.2" cy="337.5" r="5" fill="#7FE9FF"/>
+
+      <circle cx="577.2" cy="522.5" r="17" fill="#0A2038" stroke="#A46BFF" stroke-width="1.5">
+        <animate attributeName="opacity" values="0.55;1;0.55" dur="4.4s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="577.2" cy="522.5" r="5" fill="#C39BFF"/>
+
+      <circle cx="417" cy="615" r="17" fill="#0A2038" stroke="#A46BFF" stroke-width="1.5">
+        <animate attributeName="opacity" values="0.55;1;0.55" dur="3.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="417" cy="615" r="5" fill="#C39BFF"/>
+
+      <circle cx="256.8" cy="522.5" r="17" fill="#0A2038" stroke="#3BE8FF" stroke-width="1.5">
+        <animate attributeName="opacity" values="0.55;1;0.55" dur="4.1s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="256.8" cy="522.5" r="5" fill="#7FE9FF"/>
+
+      <circle cx="256.8" cy="337.5" r="17" fill="#0A2038" stroke="#3BE8FF" stroke-width="1.5">
+        <animate attributeName="opacity" values="0.55;1;0.55" dur="2.9s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="256.8" cy="337.5" r="5" fill="#7FE9FF"/>
+    </g>
+
+    <!-- 中心六边形 -->
+    <polygon points="417,330 503.6,380 503.6,480 417,530 330.4,480 330.4,380"
+             fill="url(#hexFill)" stroke="url(#hexStroke)" stroke-width="2.5"/>
+    <polygon points="417,352 484.5,391 484.5,469 417,508 349.5,469 349.5,391"
+             fill="none" stroke="#3BE8FF" stroke-width="1" opacity="0.45"/>
+
+    <!-- 中心符号 &gt;_ -->
+    <g filter="url(#glow)">
+      <polyline points="380,399 412,430 380,461" fill="none" stroke="#8FF3FF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="424" y1="463" x2="454" y2="463" stroke="#8FF3FF" stroke-width="10" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- 漂浮粒子 -->
+  <g>
+    <circle cx="186" cy="287" r="2.2" fill="#7FE9FF" opacity="0.75">
+      <animate attributeName="opacity" values="0.2;0.9;0.2" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="652" cy="333" r="1.6" fill="#A46BFF" opacity="0.65">
+      <animate attributeName="opacity" values="0.2;0.9;0.2" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="672" cy="581" r="2" fill="#7FE9FF" opacity="0.55">
+      <animate attributeName="opacity" values="0.15;0.8;0.15" dur="4.6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="168" cy="571" r="1.8" fill="#A46BFF" opacity="0.6">
+      <animate attributeName="opacity" values="0.2;0.85;0.2" dur="3.6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="193" r="1.4" fill="#CFEBFF" opacity="0.6"/>
+    <circle cx="546" cy="201" r="1.7" fill="#CFEBFF" opacity="0.5"/>
+  </g>
+
+  <!-- ===================== 名称区 ===================== -->
+  <g>
+    <line x1="256" y1="756" x2="300" y2="756" stroke="#2C6E9E" stroke-width="1.2"/>
+    <line x1="534" y1="756" x2="578" y2="756" stroke="#2C6E9E" stroke-width="1.2"/>
+    <text x="417" y="761" font-size="12" font-weight="600" fill="#4E8FBF" letter-spacing="6" text-anchor="middle">SCRIPT PROTOCOL</text>
+
+    <text x="417" y="845" font-size="62" font-weight="800" fill="url(#titleGrad)" letter-spacing="1" text-anchor="middle">Deck-Steward</text>
+
+    <text x="417" y="898" font-size="29" font-weight="500" fill="#9FC8E8" letter-spacing="14" text-anchor="middle">脚本管理</text>
+  </g>
+
+  <!-- ===================== 底部装饰 ===================== -->
+  <g>
+    <line x1="317" y1="970" x2="417" y2="970" stroke="#2C6E9E" stroke-width="0.8" opacity="0.5"/>
+    <line x1="417" y1="970" x2="517" y2="970" stroke="#2C6E9E" stroke-width="0.8" opacity="0.5"/>
+    <polygon points="417,960 424,970 417,980 410,970" fill="#3BE8FF" opacity="0.55"/>
+  </g>
+</svg>

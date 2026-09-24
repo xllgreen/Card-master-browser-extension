@@ -1,0 +1,182 @@
+<svg width="834" height="1112" viewBox="0 0 834 1112" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <!-- 基础渐变 -->
+        <radialGradient id="bgGlow" cx="50%" cy="45%" r="75%">
+            <stop offset="0%" stop-color="#1A103C"/>
+            <stop offset="100%" stop-color="#0A0A10"/>
+        </radialGradient>
+        
+        <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#FB7299"/>
+            <stop offset="50%" stop-color="#FFFFFF"/>
+            <stop offset="100%" stop-color="#00AEEC"/>
+        </linearGradient>
+
+        <linearGradient id="tvBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FB7299"/>
+            <stop offset="100%" stop-color="#00AEEC"/>
+        </linearGradient>
+
+        <linearGradient id="beamGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#F2C94C" stop-opacity="0"/>
+            <stop offset="100%" stop-color="#F2C94C" stop-opacity="0.8"/>
+        </linearGradient>
+
+        <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#F2C94C" stop-opacity="1"/>
+            <stop offset="40%" stop-color="#FB7299" stop-opacity="0.8"/>
+            <stop offset="100%" stop-color="#00AEEC" stop-opacity="0"/>
+        </radialGradient>
+
+        <linearGradient id="bottomLine" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#FB7299" stop-opacity="0"/>
+            <stop offset="50%" stop-color="#00AEEC" stop-opacity="0.8"/>
+            <stop offset="100%" stop-color="#FB7299" stop-opacity="0"/>
+        </linearGradient>
+
+        <!-- 滤镜 -->
+        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="6" result="blur"/>
+            <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+
+        <filter id="heavyGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="15" result="blur"/>
+            <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+
+        <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="25"/>
+        </filter>
+
+        <!-- 科技感网格图案 -->
+        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00AEEC" stroke-width="0.5" opacity="0.05"/>
+        </pattern>
+    </defs>
+
+    <!-- 背景层 -->
+    <rect width="834" height="1112" fill="url(#bgGlow)"/>
+    
+    <!-- 星云光晕 -->
+    <circle cx="200" cy="300" r="250" fill="#FB7299" opacity="0.1" filter="url(#blur)"/>
+    <circle cx="650" cy="750" r="300" fill="#00AEEC" opacity="0.08" filter="url(#blur)"/>
+    <circle cx="417" cy="520" r="350" fill="#F2C94C" opacity="0.05" filter="url(#blur)"/>
+
+    <!-- 卡牌外框与网格 -->
+    <rect x="30" y="30" width="774" height="1052" rx="16" fill="#11121A" stroke="url(#tvBorder)" stroke-width="3"/>
+    <rect x="30" y="30" width="774" height="1052" rx="16" fill="url(#grid)"/>
+    <rect x="40" y="40" width="754" height="1032" rx="12" fill="none" stroke="#00AEEC" stroke-width="1" opacity="0.4"/>
+
+    <!-- 装饰性角标 -->
+    <path d="M 55 80 L 55 55 L 80 55" fill="none" stroke="#FB7299" stroke-width="3" opacity="0.8"/>
+    <path d="M 779 80 L 779 55 L 754 55" fill="none" stroke="#FB7299" stroke-width="3" opacity="0.8"/>
+    <path d="M 55 1032 L 55 1057 L 80 1057" fill="none" stroke="#FB7299" stroke-width="3" opacity="0.8"/>
+    <path d="M 779 1032 L 779 1057 L 754 1057" fill="none" stroke="#FB7299" stroke-width="3" opacity="0.8"/>
+
+    <!-- 背景水印 -->
+    <g opacity="0.04" transform="translate(80, 800) scale(2)">
+        <rect x="0" y="20" width="80" height="60" rx="10" fill="none" stroke="#FFFFFF" stroke-width="4"/>
+        <line x1="20" y1="0" x2="30" y2="20" stroke="#FFFFFF" stroke-width="4"/>
+        <line x1="60" y1="0" x2="50" y2="20" stroke="#FFFFFF" stroke-width="4"/>
+    </g>
+    <g opacity="0.04" transform="translate(620, 200) scale(1.5)">
+        <rect x="0" y="20" width="80" height="60" rx="10" fill="none" stroke="#FFFFFF" stroke-width="4"/>
+        <line x1="20" y1="0" x2="30" y2="20" stroke="#FFFFFF" stroke-width="4"/>
+        <line x1="60" y1="0" x2="50" y2="20" stroke="#FFFFFF" stroke-width="4"/>
+    </g>
+
+    <!-- 标题区域 -->
+    <rect x="60" y="60" width="714" height="140" rx="8" fill="#0A0C14" stroke="#FB7299" stroke-width="2"/>
+    <path d="M 60 200 L 140 200 L 120 180 L 60 180 Z" fill="#FB7299" opacity="0.8"/>
+    <path d="M 774 200 L 694 200 L 714 180 L 774 180 Z" fill="#00AEEC" opacity="0.8"/>
+    
+    <!-- 标题装饰播放按钮 -->
+    <g opacity="0.15" transform="translate(680, 120)">
+        <polygon points="0,0 0,40 40,20" fill="#FFFFFF"/>
+    </g>
+    <g opacity="0.15" transform="translate(114, 120)">
+        <polygon points="40,0 40,40 0,20" fill="#FFFFFF"/>
+    </g>
+
+    <!-- 标题文字 -->
+    <text x="417" y="125" font-family="'Arial Black', 'Impact', sans-serif" font-size="48" fill="url(#textGrad)" text-anchor="middle" letter-spacing="4" filter="url(#glow)">万象星核 NovaBay</text>
+    <text x="417" y="170" font-family="'Arial', sans-serif" font-size="20" fill="#00AEEC" text-anchor="middle" letter-spacing="2" font-weight="bold">bilikit-core B站体验增强核心</text>
+
+    <!-- 中央星核主视觉（重心居中） -->
+    <g transform="translate(417, 550)">
+        <!-- 外层刻度瞄准镜 -->
+        <circle cx="0" cy="0" r="215" fill="none" stroke="#00AEEC" stroke-width="1.5" stroke-dasharray="4 12" opacity="0.5"/>
+        <circle cx="0" cy="0" r="225" fill="none" stroke="#FB7299" stroke-width="1" stroke-dasharray="2 16" opacity="0.35"/>
+        <circle cx="0" cy="0" r="170" fill="none" stroke="#F2C94C" stroke-width="1" opacity="0.25"/>
+        
+        <!-- 十字准星 -->
+        <line x1="-240" y1="0" x2="-210" y2="0" stroke="#00AEEC" stroke-width="2" opacity="0.7"/>
+        <line x1="210" y1="0" x2="240" y2="0" stroke="#00AEEC" stroke-width="2" opacity="0.7"/>
+        <line x1="0" y1="-240" x2="0" y2="-210" stroke="#00AEEC" stroke-width="2" opacity="0.7"/>
+        <line x1="0" y1="210" x2="0" y2="240" stroke="#00AEEC" stroke-width="2" opacity="0.7"/>
+
+        <!-- 能量光束 -->
+        <line x1="0" y1="0" x2="-170" y2="-150" stroke="url(#beamGrad)" stroke-width="2.5" opacity="0.5"/>
+        <line x1="0" y1="0" x2="170" y2="-150" stroke="url(#beamGrad)" stroke-width="2.5" opacity="0.5"/>
+        <line x1="0" y1="0" x2="-170" y2="150" stroke="url(#beamGrad)" stroke-width="2.5" opacity="0.5"/>
+        <line x1="0" y1="0" x2="170" y2="150" stroke="url(#beamGrad)" stroke-width="2.5" opacity="0.5"/>
+    </g>
+
+    <!-- 星核核心能量 -->
+    <circle cx="417" cy="550" r="130" fill="none" stroke="#FB7299" stroke-width="3" opacity="0.35" stroke-dasharray="18 10"/>
+    <circle cx="417" cy="550" r="120" fill="none" stroke="#00AEEC" stroke-width="2" opacity="0.6" stroke-dasharray="6 6"/>
+    <circle cx="417" cy="550" r="90" fill="url(#coreGlow)" filter="url(#heavyGlow)"/>
+    <circle cx="417" cy="550" r="35" fill="#FFFFFF" filter="url(#glow)"/>
+
+    <!-- B站电视图标（无字母） -->
+    <g transform="translate(417, 550)">
+        <!-- 外部发光层 -->
+        <rect x="-92" y="-58" width="184" height="116" rx="18" fill="none" stroke="url(#tvBorder)" stroke-width="7" filter="url(#glow)" opacity="0.75"/>
+        <!-- 电视主体 -->
+        <rect x="-88" y="-54" width="176" height="108" rx="14" fill="#0A0C14" stroke="url(#tvBorder)" stroke-width="3.5"/>
+        <!-- 天线 -->
+        <path d="M -46 -90 L -20 -54 M 46 -90 L 20 -54" stroke="url(#tvBorder)" stroke-width="5.5" stroke-linecap="round"/>
+        <!-- 天线连接点 -->
+        <circle cx="-46" cy="-90" r="4.5" fill="#FB7299" filter="url(#glow)"/>
+        <circle cx="46" cy="-90" r="4.5" fill="#FB7299" filter="url(#glow)"/>
+        
+        <!-- 内部光晕 -->
+        <circle cx="0" cy="0" r="40" fill="#00AEEC" opacity="0.12" filter="url(#glow)"/>
+    </g>
+
+    <!-- 漂浮粒子 / 星空点缀 -->
+    <g fill="#FFFFFF">
+        <circle cx="120" cy="150" r="2" opacity="0.8"/>
+        <circle cx="700" cy="250" r="1.5" fill="#FB7299" opacity="0.9"/>
+        <circle cx="600" cy="880" r="2.5" fill="#00AEEC" opacity="0.7"/>
+        <circle cx="200" cy="950" r="1" opacity="0.5"/>
+        <circle cx="750" cy="450" r="2" fill="#F2C94C" opacity="0.8"/>
+        <circle cx="100" cy="600" r="1.5" fill="#00AEEC" opacity="0.6"/>
+        <circle cx="450" cy="150" r="1.5" fill="#FB7299" opacity="0.7"/>
+        <circle cx="680" cy="680" r="2" opacity="0.6"/>
+        <circle cx="150" cy="700" r="1" fill="#F2C94C" opacity="0.8"/>
+        <circle cx="500" cy="850" r="1.5" opacity="0.9"/>
+        <circle cx="80" cy="1000" r="2" opacity="0.5"/>
+        <circle cx="400" cy="100" r="1.5" opacity="0.8"/>
+    </g>
+
+    <!-- 底部协调装饰 -->
+    <line x1="120" y1="960" x2="714" y2="960" stroke="url(#bottomLine)" stroke-width="1.5" opacity="0.7"/>
+    <line x1="220" y1="980" x2="614" y2="980" stroke="url(#bottomLine)" stroke-width="1" opacity="0.4"/>
+    
+    <g transform="translate(417, 960)">
+        <polygon points="0,-8 8,0 0,8 -8,0" fill="#00AEEC" opacity="0.6" filter="url(#glow)"/>
+        <circle cx="-35" cy="0" r="2.5" fill="#FB7299" opacity="0.7"/>
+        <circle cx="35" cy="0" r="2.5" fill="#FB7299" opacity="0.7"/>
+    </g>
+
+    <!-- 底部中央光点 -->
+    <circle cx="417" cy="1000" r="3" fill="#F2C94C" opacity="0.5" filter="url(#glow)"/>
+</svg>

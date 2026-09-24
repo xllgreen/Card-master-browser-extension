@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="16 16 496 224" width="496" height="224" role="img" aria-label="万象星核 NovaBay Logo">
+  <!-- 画布已从 1024x256 裁到内容外接框：原画布右半是透明空白，图形本体一个像素没动， -->
+  <!-- 去掉空白后横版字标才能按宽度等比铺满方形 icon 的边长。 -->
+  <defs>
+    <linearGradient id="novaCore" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E0F2FE"/>
+      <stop offset="45%" stop-color="#22D3EE"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+
+    <linearGradient id="novaRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22D3EE"/>
+      <stop offset="55%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+
+    <radialGradient id="novaGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#22D3EE" stop-opacity="0.45"/>
+      <stop offset="70%" stop-color="#8B5CF6" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- 图标部分 -->
+  <g transform="translate(128 128)">
+    <!-- 光晕 -->
+    <circle r="104" fill="url(#novaGlow)"/>
+
+    <!-- 外环轨道 -->
+    <circle
+      r="86"
+      fill="none"
+      stroke="url(#novaRing)"
+      stroke-width="10"
+      stroke-linecap="round"
+      stroke-dasharray="168 58"
+      transform="rotate(-18)"
+    />
+
+    <!-- 椭圆轨道 -->
+    <ellipse
+      rx="96"
+      ry="36"
+      fill="none"
+      stroke="url(#novaRing)"
+      stroke-width="5"
+      transform="rotate(-28)"
+    />
+
+    <!-- 八芒星核 -->
+    <path
+      d="M0,-72 L10,-24 L51,-51 L24,-10 L72,0 L24,10 L51,51 L10,24 L0,72 L-10,24 L-51,51 L-24,10 L-72,0 L-24,-10 L-51,-51 L-10,-24 Z"
+      fill="url(#novaCore)"
+      opacity="0.95"
+    />
+
+    <!-- 中心核心 -->
+    <circle r="34" fill="url(#novaCore)"/>
+    <circle r="12" fill="#FFFFFF" opacity="0.85"/>
+  </g>
+
+  <!-- 文字部分 -->
+  <text
+    x="264"
+    y="108"
+    font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif"
+    font-size="56"
+    font-weight="800"
+    fill="#0F172A"
+  >
+    万象星核
+  </text>
+
+  <text
+    x="264"
+    y="174"
+    font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif"
+    font-size="48"
+    font-weight="600"
+    fill="#2563EB"
+  >
+    NovaBay
+  </text>
+</svg>
